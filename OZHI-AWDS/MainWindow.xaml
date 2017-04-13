@@ -1,0 +1,96 @@
+﻿<Window x:Class="OZHI_AWDS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OZHI_AWDS"
+        mc:Ignorable="d"
+        Title="OZHI-AWDS" Height="{Binding SystemParameters.PrimaryScreenHeight}" Width="{Binding SystemParameters.PrimaryScreenWidth}">
+    <Window.Resources>
+        <Style x:Key="OpenSans">
+            <Setter Property="TextElement.FontFamily" Value="OpenSans-Regular" />
+        </Style>
+        <Style x:Key="TextBlockMouseOverStyle" TargetType="{x:Type TextBlock}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#8BC63E" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="TextElement.FontFamily" Value="OpenSans-Regular" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="{x:Null}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="LightSteelBlue" BorderThickness="0,0,0,1">
+            <DockPanel Name="dock_Main">
+                <Menu DockPanel.Dock="Top" Background="White" Style="{StaticResource OpenSans}">
+                    <MenuItem Header="_File">
+                        <MenuItem Header="_New" />
+                        <MenuItem Header="_Open" />
+                        <MenuItem Header="_Save" />
+                        <MenuItem Header="_Save_As" />
+                        <MenuItem Header="_Print" />
+                        <MenuItem Header="_Quit" />
+                    </MenuItem>
+                    <MenuItem Header="_Edit">
+                        <MenuItem Header="_Undo" />
+                        <MenuItem Header="_Redo" />
+                        <Separator />
+                        <MenuItem Header="_Cut" />
+                        <MenuItem Header="_Copy" />
+                        <MenuItem Header="_Paste" />
+                    </MenuItem>
+                    <MenuItem Header="_Help">
+                        <MenuItem Header="_About" />
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+        </Border>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="0,0,1,0" Background="{x:Null}" />
+            <Grid Name="Main_Grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Name="TitleRow" Height="2*" />
+                    <RowDefinition Name="ClientRow" Height="1*" />
+                    <RowDefinition Name="ClientSub1Row" Height="0*" />
+                    <RowDefinition Name="ClientSub2Row" Height="0*" />
+                    <RowDefinition Name="WorkDescriptionRow" Height="1*" />
+                    <RowDefinition Name="WorkDescriptionSubRow" Height="0*" />
+                    <RowDefinition Name="ReportsRow" Height="1*" />
+                    <RowDefinition Name="ReportsSubRow" Height="0*" />
+                    <RowDefinition Name="ToolsRow" Height="1*" />
+                    <RowDefinition Name="ToolsSubRow" Height="0*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Name="RemoveRow" Height="1*" />
+                </Grid.RowDefinitions>
+                <!--<TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource OpenSans}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="10,0,0,0">
+                    <InlineUIContainer>
+                        <Image Source="mouse.png" Height="14" Margin="0,0,15,0" />
+                    </InlineUIContainer> 
+                    <Run>Welcome to OZHI-AWDS</Run>
+                </TextBlock>-->
+                <!--<TextBlock Grid.Column="0" Grid.Row="1" Name="Main_Client" PreviewMouseUp="Main_Client_PreviewMouseUp" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Client</TextBlock>-->
+                <!--<TextBlock Grid.Column="0" Grid.Row="3" Name="Main_WD" PreviewMouseUp="Main_WD_PreviewMouseUp"  TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Work Description</TextBlock>-->
+                <TextBlock Grid.Column="0" Grid.Row="6" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Reports</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="8" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Tools</TextBlock>
+            </Grid>
+            <Grid Name="MainPageHolder" Grid.Column="1">
+                <Frame Name="FrameHolder" ContentRendered="FrameHolder_ContentRendered" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
