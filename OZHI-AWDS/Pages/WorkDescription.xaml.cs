@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace OZHI_AWDS
 {
     /// <summary>
-    /// Interaction logic for BrowseClients.xaml
+    /// Interaction logic for WorkDescription.xaml
     /// </summary>
-    public partial class BrowseClients : Page
+    public partial class WorkDescription : Page
     {
-        public BrowseClients()
+        public WorkDescription()
         {
             InitializeComponent();
         }

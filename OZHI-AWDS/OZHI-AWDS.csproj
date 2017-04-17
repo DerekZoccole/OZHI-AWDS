@@ -55,17 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BrowseClients.xaml.cs">
+    <Compile Include="Pages\BrowseClients.xaml.cs">
       <DependentUpon>BrowseClients.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TextInputToVisibilityConverter.cs" />
-    <Compile Include="WatermarkAdorner.cs" />
-    <Compile Include="WatermarkService.cs" />
-    <Page Include="BrowseClients.xaml">
+    <Compile Include="Classes\TextInputToVisibilityConverter.cs" />
+    <Compile Include="Classes\WatermarkAdorner.cs" />
+    <Compile Include="Classes\WatermarkService.cs" />
+    <Compile Include="Pages\WorkDescription.xaml.cs">
+      <DependentUpon>WorkDescription.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Pages\BrowseClients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Client.xaml">
+    <Page Include="Pages\Client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,13 +80,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Client.xaml.cs">
+    <Compile Include="Pages\Client.xaml.cs">
       <DependentUpon>Client.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\WorkDescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -103,8 +110,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="OpenSans-Italic.ttf" />
-    <Resource Include="OpenSans-Regular.ttf" />
+    <Resource Include="Fonts\OpenSans-Italic.ttf" />
+    <Resource Include="Fonts\OpenSans-Regular.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,7 +122,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="mouse.png" />
+    <Resource Include="Images\mouse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

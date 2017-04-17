@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace OZHI_AWDS
 {
@@ -32,6 +24,8 @@ namespace OZHI_AWDS
         TextBlock txtBlock7 = new TextBlock();
         TextBlock txtBlock8 = new TextBlock();
 
+        int height;
+
         bool clientClicked = false;
         bool workDescriptionClicked = false;
         bool reportsClicked = false;
@@ -41,22 +35,31 @@ namespace OZHI_AWDS
         {
             InitializeComponent();
 
+            Main_Window.Loaded += Main_Window_Loaded;
+
+        }
+
+        private void Main_Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            height = (int) ClientRow.ActualHeight / 2;
+            Console.WriteLine(height);
+
             Initialize_Tabs();
         }
 
         private void Initialize_Tabs()
         {
-            BitmapImage bi = new BitmapImage(new Uri("pack://application:,,,/mouse.png"));
+            BitmapImage bi = new BitmapImage(new Uri("pack://application:,,,/images/mouse.png"));
             Image image = new Image();
             image.Source = bi;
             image.Height = 14;
             image.Margin = new Thickness(0, 0, 15, 0);
             InlineUIContainer image1 = new InlineUIContainer(image);
-
+            
             txtBlock1.TextWrapping = TextWrapping.Wrap;
             txtBlock1.VerticalAlignment = VerticalAlignment.Center;
             txtBlock1.HorizontalAlignment = HorizontalAlignment.Stretch;
-            txtBlock1.FontFamily = new FontFamily("OpenSans-Regular.ttf");
+            txtBlock1.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
             txtBlock1.TextAlignment = TextAlignment.Left;
             txtBlock1.FontSize = 14;
             txtBlock1.Padding = new Thickness(10, 0, 0, 0);
@@ -66,14 +69,14 @@ namespace OZHI_AWDS
             txtBlock1.Inlines.Add(run1);
             Grid.SetColumn(txtBlock1, 0);
             Grid.SetRow(txtBlock1, 0);
-
+            
             txtBlock2.TextWrapping = TextWrapping.Wrap;
             txtBlock2.VerticalAlignment = VerticalAlignment.Stretch;
             txtBlock2.HorizontalAlignment = HorizontalAlignment.Stretch;
-            txtBlock2.FontFamily = new FontFamily("OpenSans-Regular.ttf");
+            txtBlock2.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
             txtBlock2.TextAlignment = TextAlignment.Left;
             txtBlock2.FontSize = 14;
-            txtBlock2.Padding = new Thickness(35,20,0,0);
+            txtBlock2.Padding = new Thickness(35 ,height ,0 ,0);
             Run run2 = new Run();
             run2.Text = "Client";
             txtBlock2.Inlines.Add(run2);
@@ -83,7 +86,7 @@ namespace OZHI_AWDS
             txtBlock3.TextWrapping = TextWrapping.Wrap;
             txtBlock3.VerticalAlignment = VerticalAlignment.Stretch;
             txtBlock3.HorizontalAlignment = HorizontalAlignment.Stretch;
-            txtBlock3.FontFamily = new FontFamily("OpenSans-Regular.ttf");
+            txtBlock3.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
             txtBlock3.TextAlignment = TextAlignment.Left;
             txtBlock3.FontSize = 14;
             txtBlock3.Padding = new Thickness(35, 5, 0, 0);
@@ -96,7 +99,7 @@ namespace OZHI_AWDS
             txtBlock4.TextWrapping = TextWrapping.Wrap;
             txtBlock4.VerticalAlignment = VerticalAlignment.Stretch;
             txtBlock4.HorizontalAlignment = HorizontalAlignment.Stretch;
-            txtBlock4.FontFamily = new FontFamily("OpenSans-Regular.ttf");
+            txtBlock4.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
             txtBlock4.TextAlignment = TextAlignment.Left;
             txtBlock4.FontSize = 14;
             txtBlock4.Padding = new Thickness(35, 5, 0, 0);
@@ -109,10 +112,10 @@ namespace OZHI_AWDS
             txtBlock5.TextWrapping = TextWrapping.Wrap;
             txtBlock5.VerticalAlignment = VerticalAlignment.Stretch;
             txtBlock5.HorizontalAlignment = HorizontalAlignment.Stretch;
-            txtBlock5.FontFamily = new FontFamily("OpenSans-Regular.ttf");
+            txtBlock5.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
             txtBlock5.TextAlignment = TextAlignment.Left;
             txtBlock5.FontSize = 14;
-            txtBlock5.Padding = new Thickness(35, 20, 0, 0);
+            txtBlock5.Padding = new Thickness(35, height, 0, 0);
             Run run5 = new Run();
             run5.Text = "Work Description";
             txtBlock5.Inlines.Add(run5);
@@ -133,12 +136,20 @@ namespace OZHI_AWDS
 
             txtBlock5.MouseEnter += TxtBlock5_MouseEnter;
             txtBlock5.MouseLeave += TxtBlock5_MouseLeave;
+            txtBlock5.MouseLeftButtonUp += TxtBlock5_MouseLeftButtonUp;
 
             Main_Grid.Children.Add(txtBlock1);
             Main_Grid.Children.Add(txtBlock2);
             Main_Grid.Children.Add(txtBlock3);
             Main_Grid.Children.Add(txtBlock4);
             Main_Grid.Children.Add(txtBlock5);
+        }
+
+        private void TxtBlock5_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            
+
+            FrameHolder.Navigate(new System.Uri("Pages/WorkDescription.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void TxtBlock4_MouseLeave(object sender, MouseEventArgs e)
@@ -225,24 +236,24 @@ namespace OZHI_AWDS
             }
         }
 
+        private void Remove_Client_Tabs()
+        {
+
+        }
+
         private void TxtBlock4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            FrameHolder.Navigate(new System.Uri("Client.xaml", UriKind.RelativeOrAbsolute));
+            FrameHolder.Navigate(new System.Uri("Pages/Client.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void TxtBlock3_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            FrameHolder.Navigate(new System.Uri("BrowseClients.xaml", UriKind.RelativeOrAbsolute));
+            FrameHolder.Navigate(new System.Uri("Pages/BrowseClients.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void Main_Client_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             Add_Client_Tabs();
-        }
-
-        private void Main_WD_PreviewMouseUp(object sender, MouseButtonEventArgs e)
-        {
-
         }
 
         private void FrameHolder_ContentRendered(object sender, EventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OZHI_AWDS"
         mc:Ignorable="d"
-        Title="OZHI-AWDS" Height="{Binding SystemParameters.PrimaryScreenHeight}" Width="{Binding SystemParameters.PrimaryScreenWidth}">
+        Title="OZHI-AWDS" Name="Main_Window" Height="{Binding SystemParameters.PrimaryScreenHeight}" Width="{Binding SystemParameters.PrimaryScreenWidth}">
     <Window.Resources>
         <Style x:Key="OpenSans">
             <Setter Property="TextElement.FontFamily" Value="OpenSans-Regular" />

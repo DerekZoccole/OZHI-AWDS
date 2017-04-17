@@ -197,10 +197,10 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <Button Grid.Column="3" Grid.Row="19" Name="NewClientSaveButton" Content="Save" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Click="Button_Click" Background="#8BC63E" Foreground="White" Padding="0" BorderThickness="0" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+        <Button Grid.Column="3" Grid.Row="19" Name="NewClientSaveButton" Content="Save" HorizontalAlignment="Right" Margin="0,0,100,0" VerticalAlignment="Center" Click="Button_Click" Background="#8BC63E" Foreground="White" Padding="0" BorderThickness="0" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
             <Button.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Text="Save" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Padding="20,10,20,10">
+                    <TextBlock Text=" Save " Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Padding="20,10,20,10">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <Style.Triggers>
