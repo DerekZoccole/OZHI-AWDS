@@ -23,6 +23,9 @@ namespace OZHI_AWDS
         TextBlock txtBlock6 = new TextBlock();  // Reports
         TextBlock txtBlock7 = new TextBlock();  // Reports subtitle 1
         TextBlock txtBlock8 = new TextBlock();  // Reports subtitle 2
+        TextBlock txtBlock9 = new TextBlock();  // Tools
+        TextBlock txtBlock10 = new TextBlock();  // Tools subtitle 1
+        TextBlock txtBlock11 = new TextBlock();  // Tools subtitle 2
 
         int height;
 
@@ -35,7 +38,6 @@ namespace OZHI_AWDS
             InitializeComponent();
 
             Main_Window.Loaded += Main_Window_Loaded;
-
         }
 
         private void Main_Window_Loaded(object sender, RoutedEventArgs e)

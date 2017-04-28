@@ -39,8 +39,11 @@
       <HintPath>..\packages\RDLCPrinter.1.2.0\lib\net45\DSoft.RDLC.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -50,9 +53,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -65,6 +70,12 @@
     <Compile Include="Classes\TextInputToVisibilityConverter.cs" />
     <Compile Include="Classes\WatermarkAdorner.cs" />
     <Compile Include="Classes\WatermarkService.cs" />
+    <Compile Include="Pages\ReportViewerBid.xaml.cs">
+      <DependentUpon>ReportViewerBid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportViewerEstimate.xaml.cs">
+      <DependentUpon>ReportViewerEstimate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\WorkDescription.xaml.cs">
       <DependentUpon>WorkDescription.xaml</DependentUpon>
     </Compile>
@@ -91,6 +102,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ReportViewerBid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ReportViewerEstimate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\WorkDescription.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
