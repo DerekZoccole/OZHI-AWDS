@@ -20,14 +20,13 @@ namespace OZHI_AWDS
         TextBlock txtBlock3 = new TextBlock();  // Client subtitle 1
         TextBlock txtBlock4 = new TextBlock();  // Client subtitle 2
         TextBlock txtBlock5 = new TextBlock();  // Work Description
-        TextBlock txtBlock6 = new TextBlock();  // 
-        TextBlock txtBlock7 = new TextBlock();
-        TextBlock txtBlock8 = new TextBlock();
+        TextBlock txtBlock6 = new TextBlock();  // Reports
+        TextBlock txtBlock7 = new TextBlock();  // Reports subtitle 1
+        TextBlock txtBlock8 = new TextBlock();  // Reports subtitle 2
 
         int height;
 
         bool clientClicked = false;
-        bool workDescriptionClicked = false;
         bool reportsClicked = false;
         bool toolsClicked = false;
 
@@ -41,8 +40,7 @@ namespace OZHI_AWDS
 
         private void Main_Window_Loaded(object sender, RoutedEventArgs e)
         {
-            height = (int) ClientRow.ActualHeight / 2;
-            Console.WriteLine(height);
+            height = (int) (ClientRow.ActualHeight / 2) - 7;
 
             Initialize_Tabs();
         }
@@ -122,6 +120,45 @@ namespace OZHI_AWDS
             Grid.SetColumn(txtBlock5, 0);
             Grid.SetRow(txtBlock5, 4);
 
+            txtBlock6.TextWrapping = TextWrapping.Wrap;
+            txtBlock6.VerticalAlignment = VerticalAlignment.Stretch;
+            txtBlock6.HorizontalAlignment = HorizontalAlignment.Stretch;
+            txtBlock6.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
+            txtBlock6.TextAlignment = TextAlignment.Left;
+            txtBlock6.FontSize = 14;
+            txtBlock6.Padding = new Thickness(35, height, 0, 0);
+            Run run6 = new Run();
+            run6.Text = "Reports";
+            txtBlock6.Inlines.Add(run6);
+            Grid.SetColumn(txtBlock6, 0);
+            Grid.SetRow(txtBlock6, 6);
+
+            txtBlock7.TextWrapping = TextWrapping.Wrap;
+            txtBlock7.VerticalAlignment = VerticalAlignment.Stretch;
+            txtBlock7.HorizontalAlignment = HorizontalAlignment.Stretch;
+            txtBlock7.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
+            txtBlock7.TextAlignment = TextAlignment.Left;
+            txtBlock7.FontSize = 14;
+            txtBlock7.Padding = new Thickness(35, 5, 0, 0);
+            Run run7 = new Run();
+            run7.Text = "Estimate";
+            txtBlock7.Inlines.Add(run7);
+            Grid.SetColumn(txtBlock7, 0);
+            Grid.SetRow(txtBlock7, 7);
+
+            txtBlock8.TextWrapping = TextWrapping.Wrap;
+            txtBlock8.VerticalAlignment = VerticalAlignment.Stretch;
+            txtBlock8.HorizontalAlignment = HorizontalAlignment.Stretch;
+            txtBlock8.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
+            txtBlock8.TextAlignment = TextAlignment.Left;
+            txtBlock8.FontSize = 14;
+            txtBlock8.Padding = new Thickness(35, 5, 0, 0);
+            Run run8 = new Run();
+            run8.Text = "Invitation to Bid";
+            txtBlock8.Inlines.Add(run8);
+            Grid.SetColumn(txtBlock8, 0);
+            Grid.SetRow(txtBlock8, 8);
+
             txtBlock2.MouseEnter += TxtBlock2_MouseEnter;
             txtBlock2.MouseLeave += TxtBlock2_MouseLeave;
             txtBlock2.MouseLeftButtonUp += TxtBlock2_MouseLeftButtonUp;
@@ -138,51 +175,46 @@ namespace OZHI_AWDS
             txtBlock5.MouseLeave += TxtBlock5_MouseLeave;
             txtBlock5.MouseLeftButtonUp += TxtBlock5_MouseLeftButtonUp;
 
+            txtBlock6.MouseEnter += TxtBlock6_MouseEnter;
+            txtBlock6.MouseLeave += TxtBlock6_MouseLeave;
+            txtBlock6.MouseLeftButtonUp += TxtBlock6_MouseLeftButtonUp;
+
+            txtBlock7.MouseEnter += TxtBlock7_MouseEnter;
+            txtBlock7.MouseLeave += TxtBlock7_MouseLeave;
+            txtBlock7.MouseLeftButtonUp += TxtBlock7_MouseLeftButtonUp;
+
+            txtBlock8.MouseEnter += TxtBlock8_MouseEnter;
+            txtBlock8.MouseLeave += TxtBlock8_MouseLeave;
+            txtBlock8.MouseLeftButtonUp += TxtBlock8_MouseLeftButtonUp;
+
             Main_Grid.Children.Add(txtBlock1);
             Main_Grid.Children.Add(txtBlock2);
             Main_Grid.Children.Add(txtBlock3);
             Main_Grid.Children.Add(txtBlock4);
             Main_Grid.Children.Add(txtBlock5);
+            Main_Grid.Children.Add(txtBlock6);
+            Main_Grid.Children.Add(txtBlock7);
+            Main_Grid.Children.Add(txtBlock8);
         }
-
-        private void TxtBlock5_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+                                                                   
+        private void TxtBlock2_MouseLeave(object sender, MouseEventArgs e)
         {
-            
-
-            FrameHolder.Navigate(new System.Uri("Pages/WorkDescription.xaml", UriKind.RelativeOrAbsolute));
-        }
-
-        private void TxtBlock4_MouseLeave(object sender, MouseEventArgs e)
-        {
-            txtBlock4.FontWeight = FontWeights.Normal;
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
             Mouse.OverrideCursor = Cursors.Arrow;
-        }
-
-        private void TxtBlock4_MouseEnter(object sender, MouseEventArgs e)
-        {
-            txtBlock4.FontWeight = FontWeights.Bold;
-            Mouse.OverrideCursor = Cursors.Hand;
-        }
-
+        }        
         private void TxtBlock3_MouseLeave(object sender, MouseEventArgs e)
         {
             txtBlock3.FontWeight = FontWeights.Normal;
             Mouse.OverrideCursor = Cursors.Arrow;
         }
-
-        private void TxtBlock3_MouseEnter(object sender, MouseEventArgs e)
+        private void TxtBlock4_MouseLeave(object sender, MouseEventArgs e)
         {
-            txtBlock3.FontWeight = FontWeights.Bold;
-            Mouse.OverrideCursor = Cursors.Hand;
+            txtBlock4.FontWeight = FontWeights.Normal;
+            Mouse.OverrideCursor = Cursors.Arrow;
         }
-
-        private void TxtBlock2_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Add_Client_Tabs();
-
-            //FrameHolder.Navigate(new System.Uri("Client.xaml", UriKind.RelativeOrAbsolute));
-        }
-
         private void TxtBlock5_MouseLeave(object sender, MouseEventArgs e)
         {
             TextBlock tBlock = (TextBlock)sender;
@@ -190,6 +222,42 @@ namespace OZHI_AWDS
             tBlock.Background = null;
             tBlock.Foreground = Brushes.Black;
             Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void TxtBlock6_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void TxtBlock7_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtBlock7.FontWeight = FontWeights.Normal;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void TxtBlock8_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtBlock8.FontWeight = FontWeights.Normal;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void TxtBlock2_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+        private void TxtBlock3_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtBlock3.FontWeight = FontWeights.Bold;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+        private void TxtBlock4_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtBlock4.FontWeight = FontWeights.Bold;
+            Mouse.OverrideCursor = Cursors.Hand;
         }
 
         private void TxtBlock5_MouseEnter(object sender, MouseEventArgs e)
@@ -200,17 +268,7 @@ namespace OZHI_AWDS
             tBlock.Foreground = Brushes.White;
             Mouse.OverrideCursor = Cursors.Hand;
         }
-
-        private void TxtBlock2_MouseLeave(object sender, MouseEventArgs e)
-        {
-            TextBlock tBlock = (TextBlock)sender;
-            BrushConverter bc = new BrushConverter();
-            tBlock.Background = null;
-            tBlock.Foreground = Brushes.Black;
-            Mouse.OverrideCursor = Cursors.Arrow;
-        }
-
-        private void TxtBlock2_MouseEnter(object sender, MouseEventArgs e)
+        private void TxtBlock6_MouseEnter(object sender, MouseEventArgs e)
         {
             TextBlock tBlock = (TextBlock)sender;
             BrushConverter bc = new BrushConverter();
@@ -218,47 +276,104 @@ namespace OZHI_AWDS
             tBlock.Foreground = Brushes.White;
             Mouse.OverrideCursor = Cursors.Hand;
         }
-
-        private void Add_Client_Tabs()
+        private void TxtBlock7_MouseEnter(object sender, MouseEventArgs e)
         {
-            double height = ClientRow.ActualHeight;
-
-            if (!clientClicked)
-            {
-                Main_Grid.RowDefinitions.Remove(RemoveRow);
-
-                double actualHeight = height / 2;
-
-                ClientSub1Row.Height = new GridLength(actualHeight);
-                ClientSub2Row.Height = new GridLength(actualHeight);
-
-                clientClicked = true;
-            }
+            txtBlock7.FontWeight = FontWeights.Bold;
+            Mouse.OverrideCursor = Cursors.Hand;
         }
-
-        private void Remove_Client_Tabs()
+        private void TxtBlock8_MouseEnter(object sender, MouseEventArgs e)
         {
+            txtBlock8.FontWeight = FontWeights.Bold;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+        private void TxtBlock2_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Remove_Tabs();
 
+            Add_Client_Tabs();
+        }
+        private void TxtBlock3_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            FrameHolder.Navigate(new System.Uri("Pages/BrowseClients.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void TxtBlock4_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             FrameHolder.Navigate(new System.Uri("Pages/Client.xaml", UriKind.RelativeOrAbsolute));
         }
-
-        private void TxtBlock3_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void TxtBlock5_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            FrameHolder.Navigate(new System.Uri("Pages/BrowseClients.xaml", UriKind.RelativeOrAbsolute));
+            Remove_Tabs();
+
+            FrameHolder.Navigate(new System.Uri("Pages/WorkDescription.xaml", UriKind.RelativeOrAbsolute));
         }
-
-        private void Main_Client_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        private void TxtBlock6_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            Add_Client_Tabs();
+            Remove_Tabs();
+
+            Add_Report_Tabs();
+        }
+        private void TxtBlock7_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+        }
+        private void TxtBlock8_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
         }
 
         private void FrameHolder_ContentRendered(object sender, EventArgs e)
         {
             FrameHolder.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+        }
+        private void Add_Client_Tabs()
+        {
+            // TODO - add animations for smooth transitions.
+
+            double height = ClientRow.ActualHeight;
+
+            if (!clientClicked)
+            {
+                double actualHeight = height / 2;
+
+                ClientSub1Row.Height = new GridLength(25);
+                ClientSub2Row.Height = new GridLength(25);
+
+                clientClicked = true;
+            }
+        }
+        private void Add_Report_Tabs()
+        {
+            double height = ClientRow.ActualHeight;
+
+            if (!reportsClicked)
+            {
+                //Main_Grid.RowDefinitions.Remove(RemoveRow);
+
+                double actualHeight = height / 2;
+
+                ReportsSubRow1.Height = new GridLength(25);
+                ReportsSubRow2.Height = new GridLength(25);
+
+                reportsClicked = true;
+            }
+        }
+
+        private void Remove_Tabs()
+        {
+            if (clientClicked)
+            {
+                ClientSub1Row.Height = new GridLength(0);
+                ClientSub2Row.Height = new GridLength(0);
+
+                clientClicked = false;
+            }
+
+            if (reportsClicked)
+            {
+                ReportsSubRow1.Height = new GridLength(0);
+                ReportsSubRow2.Height = new GridLength(0);
+
+                reportsClicked = false;
+            }
         }
     }
 }

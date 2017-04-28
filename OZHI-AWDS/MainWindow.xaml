@@ -58,24 +58,17 @@
             <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="0,0,1,0" Background="{x:Null}" />
             <Grid Name="Main_Grid">
                 <Grid.RowDefinitions>
-                    <RowDefinition Name="TitleRow" Height="2*" />
-                    <RowDefinition Name="ClientRow" Height="1*" />
-                    <RowDefinition Name="ClientSub1Row" Height="0*" />
-                    <RowDefinition Name="ClientSub2Row" Height="0*" />
-                    <RowDefinition Name="WorkDescriptionRow" Height="1*" />
-                    <RowDefinition Name="WorkDescriptionSubRow" Height="0*" />
-                    <RowDefinition Name="ReportsRow" Height="1*" />
-                    <RowDefinition Name="ReportsSubRow" Height="0*" />
-                    <RowDefinition Name="ToolsRow" Height="1*" />
-                    <RowDefinition Name="ToolsSubRow" Height="0*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="0*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Name="RemoveRow" Height="1*" />
+                    <RowDefinition Name="TitleRow" Height="100" />
+                    <RowDefinition Name="ClientRow" Height="50" />
+                    <RowDefinition Name="ClientSub1Row" Height="0" />
+                    <RowDefinition Name="ClientSub2Row" Height="0" />
+                    <RowDefinition Name="WorkDescriptionRow" Height="50" />
+                    <RowDefinition Name="WorkDescriptionSubRow" Height="0" />
+                    <RowDefinition Name="ReportsRow" Height="50" />
+                    <RowDefinition Name="ReportsSubRow1" Height="0" />
+                    <RowDefinition Name="ReportsSubRow2" Height="0" />
+                    <RowDefinition Name="ToolsRow" Height="50" />
+                    <RowDefinition Name="ToolsSubRow" Height="0" />
                 </Grid.RowDefinitions>
                 <!--<TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource OpenSans}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="10,0,0,0">
                     <InlineUIContainer>
@@ -85,8 +78,8 @@
                 </TextBlock>-->
                 <!--<TextBlock Grid.Column="0" Grid.Row="1" Name="Main_Client" PreviewMouseUp="Main_Client_PreviewMouseUp" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Client</TextBlock>-->
                 <!--<TextBlock Grid.Column="0" Grid.Row="3" Name="Main_WD" PreviewMouseUp="Main_WD_PreviewMouseUp"  TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Work Description</TextBlock>-->
-                <TextBlock Grid.Column="0" Grid.Row="6" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Reports</TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="8" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Tools</TextBlock>
+                <!--<TextBlock Grid.Column="0" Grid.Row="6" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Reports</TextBlock>-->
+                <TextBlock Grid.Column="0" Grid.Row="9" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Tools</TextBlock>
             </Grid>
             <Grid Name="MainPageHolder" Grid.Column="1">
                 <Frame Name="FrameHolder" ContentRendered="FrameHolder_ContentRendered" />
