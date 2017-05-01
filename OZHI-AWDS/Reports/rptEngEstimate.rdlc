@@ -1812,7 +1812,7 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
             </Paragraph>
           </Paragraphs>
           <Top>0.25588cm</Top>
-          <Left>0.27594cm</Left>
+          <Left>0.27591cm</Left>
           <Height>0.78521cm</Height>
           <Width>18.75423cm</Width>
           <Style>
@@ -1882,8 +1882,8 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
           </Paragraphs>
           <Top>0.79875in</Top>
           <Left>0.11125in</Left>
-          <Height>0.35417in</Height>
-          <Width>1.89583in</Width>
+          <Height>0.78531cm</Height>
+          <Width>18.75423cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -2062,180 +2062,81 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsEstimate">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>awdsDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="PROG_CODE">
-          <DataField>PROG_CODE</DataField>
+        <Field Name="Address">
+          <DataField>Address</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CLIENT_NO">
-          <DataField>CLIENT_NO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="PROJECT">
-          <DataField>PROJECT</DataField>
+        <Field Name="AgentReferenceNumber">
+          <DataField>AgentReferenceNumber</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SURNAME">
-          <DataField>SURNAME</DataField>
+        <Field Name="City">
+          <DataField>City</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FIRSTNAME">
-          <DataField>FIRSTNAME</DataField>
+        <Field Name="ClientID">
+          <DataField>ClientID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SURNAME2">
-          <DataField>SURNAME2</DataField>
+        <Field Name="CMHCAccountNumber">
+          <DataField>CMHCAccountNumber</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FIRSTNAME2">
-          <DataField>FIRSTNAME2</DataField>
+        <Field Name="InspectionDate">
+          <DataField>InspectionDate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ADDRESS">
-          <DataField>ADDRESS</DataField>
+        <Field Name="Inspector1">
+          <DataField>Inspector1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="LEGAL_DESC">
-          <DataField>LEGAL_DESC</DataField>
+        <Field Name="Inspector2">
+          <DataField>Inspector2</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CITY">
-          <DataField>CITY</DataField>
+        <Field Name="LegalDescription">
+          <DataField>LegalDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="PROVINCE">
-          <DataField>PROVINCE</DataField>
+        <Field Name="LoanType">
+          <DataField>LoanType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="POSTAL">
-          <DataField>POSTAL</DataField>
+        <Field Name="LoanTypeF">
+          <DataField>LoanTypeF</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="LOANTYPE">
-          <DataField>LOANTYPE</DataField>
+        <Field Name="PostalCode">
+          <DataField>PostalCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="LOANTYPEF">
-          <DataField>LOANTYPEF</DataField>
+        <Field Name="Project">
+          <DataField>Project</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TELEPHONE">
-          <DataField>TELEPHONE</DataField>
+        <Field Name="Province">
+          <DataField>Province</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CMHC_NO">
-          <DataField>CMHC_NO</DataField>
+        <Field Name="Service">
+          <DataField>Service</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="AGENT_NO">
-          <DataField>AGENT_NO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="STAT_DATE">
-          <DataField>STAT_DATE</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="PREPARED1">
-          <DataField>PREPARED1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PREPARED2">
-          <DataField>PREPARED2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="MOISTURE_MOLD">
-          <DataField>MOISTURE_MOLD</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="ASBESTOS">
-          <DataField>ASBESTOS</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="CONTAMINATION">
-          <DataField>CONTAMINATION</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="LEAD_PAINT">
-          <DataField>LEAD_PAINT</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="FLOOD_MEASURES">
-          <DataField>FLOOD_MEASURES</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="SortPriority">
-          <DataField>SortPriority</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="WORK_NO">
-          <DataField>WORK_NO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Priority_E">
-          <DataField>Priority_E</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Priority_F">
-          <DataField>Priority_F</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="URGENCY_E">
-          <DataField>URGENCY_E</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="URGENCY_F">
-          <DataField>URGENCY_F</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="IMP_DESC">
-          <DataField>IMP_DESC</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="MET_DESC">
-          <DataField>MET_DESC</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="IMP_QTY">
-          <DataField>IMP_QTY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="MET_QTY">
-          <DataField>MET_QTY</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="MAT_EST">
-          <DataField>MAT_EST</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="LAB_EST">
-          <DataField>LAB_EST</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="PHONE2">
-          <DataField>PHONE2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EL_CRIT">
-          <DataField>EL_CRIT</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SPEC_TEXT">
-          <DataField>SPEC_TEXT</DataField>
+        <Field Name="Telephone">
+          <DataField>Telephone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>awdsDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Documents and Settings\KLEBLANC\My Documents\CorporateServerApps\AWDS\awdsDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Estimate</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>EstimateTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>OZHI_AWDS.Classes</rd:DataSetName>
+        <rd:TableName>EstimateDataSet</rd:TableName>
+        <rd:ObjectDataSourceType>OZHI_AWDS.Classes.EstimateDataSet, OZHI-AWDS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

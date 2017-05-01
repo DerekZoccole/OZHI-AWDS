@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,33 @@ namespace OZHI_AWDS.Pages
     /// </summary>
     public partial class ReportViewerEstimate : Page
     {
+        DataTable dt;
+
         public ReportViewerEstimate()
         {
             InitializeComponent();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            dt = new DataTable();
+            dt.Columns.Add(new DataColumn("Service", typeof(string)));
+            dt.Columns.Add(new DataColumn("ClientID", typeof(string)));
+            dt.Columns.Add(new DataColumn("Project", typeof(string)));
+            dt.Columns.Add(new DataColumn("Address", typeof(string)));
+            dt.Columns.Add(new DataColumn("LegalDescription", typeof(string)));
+            dt.Columns.Add(new DataColumn("City", typeof(string)));
+            dt.Columns.Add(new DataColumn("Province", typeof(string)));
+            dt.Columns.Add(new DataColumn("PostalCode", typeof(string)));
+            dt.Columns.Add(new DataColumn("LoanType", typeof(string)));
+            dt.Columns.Add(new DataColumn("LoanTypeF", typeof(string)));
+            dt.Columns.Add(new DataColumn("Telephone", typeof(string)));
+            dt.Columns.Add(new DataColumn("CMHCAccountNumber", typeof(string)));
+            dt.Columns.Add(new DataColumn("AgentInspectionNumber", typeof(string)));
+            dt.Columns.Add(new DataColumn("InspectionDate", typeof(string)));
+            dt.Columns.Add(new DataColumn("Inspector1", typeof(string)));
+            dt.Columns.Add(new DataColumn("Inspector2", typeof(string)));
+            dt.Columns.Add(new DataColumn("Tablix", typeof(OZHI_AWDS.Classes.EstimateDataSet.TablixClass)));
         }
     }
 }

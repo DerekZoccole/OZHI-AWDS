@@ -45,6 +45,8 @@ namespace OZHI_AWDS
             height = (int) (ClientRow.ActualHeight / 2) - 7;
 
             Initialize_Tabs();
+
+            Initialize_Data();
         }
 
         private void Initialize_Tabs()
@@ -161,6 +163,45 @@ namespace OZHI_AWDS
             Grid.SetColumn(txtBlock8, 0);
             Grid.SetRow(txtBlock8, 8);
 
+            txtBlock9.TextWrapping = TextWrapping.Wrap;
+            txtBlock9.VerticalAlignment = VerticalAlignment.Stretch;
+            txtBlock9.HorizontalAlignment = HorizontalAlignment.Stretch;
+            txtBlock9.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
+            txtBlock9.TextAlignment = TextAlignment.Left;
+            txtBlock9.FontSize = 14;
+            txtBlock9.Padding = new Thickness(35, height, 0, 0);
+            Run run9 = new Run();
+            run9.Text = "Tools";
+            txtBlock9.Inlines.Add(run9);
+            Grid.SetColumn(txtBlock9, 0);
+            Grid.SetRow(txtBlock9, 9);
+
+            txtBlock10.TextWrapping = TextWrapping.Wrap;
+            txtBlock10.VerticalAlignment = VerticalAlignment.Stretch;
+            txtBlock10.HorizontalAlignment = HorizontalAlignment.Stretch;
+            txtBlock10.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
+            txtBlock10.TextAlignment = TextAlignment.Left;
+            txtBlock10.FontSize = 14;
+            txtBlock10.Padding = new Thickness(35, 5, 0, 0);
+            Run run10 = new Run();
+            run10.Text = "Business Day Calculator";
+            txtBlock10.Inlines.Add(run10);
+            Grid.SetColumn(txtBlock10, 0);
+            Grid.SetRow(txtBlock10, 10);
+
+            txtBlock11.TextWrapping = TextWrapping.Wrap;
+            txtBlock11.VerticalAlignment = VerticalAlignment.Stretch;
+            txtBlock11.HorizontalAlignment = HorizontalAlignment.Stretch;
+            txtBlock11.FontFamily = new FontFamily("Fonts/OpenSans-Regular.ttf");
+            txtBlock11.TextAlignment = TextAlignment.Left;
+            txtBlock11.FontSize = 14;
+            txtBlock11.Padding = new Thickness(35, 5, 0, 0);
+            Run run11 = new Run();
+            run11.Text = "Import CSV";
+            txtBlock11.Inlines.Add(run11);
+            Grid.SetColumn(txtBlock11, 0);
+            Grid.SetRow(txtBlock11, 11);
+
             txtBlock2.MouseEnter += TxtBlock2_MouseEnter;
             txtBlock2.MouseLeave += TxtBlock2_MouseLeave;
             txtBlock2.MouseLeftButtonUp += TxtBlock2_MouseLeftButtonUp;
@@ -189,6 +230,18 @@ namespace OZHI_AWDS
             txtBlock8.MouseLeave += TxtBlock8_MouseLeave;
             txtBlock8.MouseLeftButtonUp += TxtBlock8_MouseLeftButtonUp;
 
+            txtBlock9.MouseEnter += TxtBlock9_MouseEnter;
+            txtBlock9.MouseLeave += TxtBlock9_MouseLeave;
+            txtBlock9.MouseLeftButtonUp += TxtBlock9_MouseLeftButtonUp;
+
+            txtBlock10.MouseEnter += TxtBlock10_MouseEnter;
+            txtBlock10.MouseLeave += TxtBlock10_MouseLeave;
+            txtBlock10.MouseLeftButtonUp += TxtBlock10_MouseLeftButtonUp;
+
+            txtBlock11.MouseEnter += TxtBlock11_MouseEnter;
+            txtBlock11.MouseLeave += TxtBlock11_MouseLeave;
+            txtBlock11.MouseLeftButtonUp += TxtBlock11_MouseLeftButtonUp;
+
             Main_Grid.Children.Add(txtBlock1);
             Main_Grid.Children.Add(txtBlock2);
             Main_Grid.Children.Add(txtBlock3);
@@ -197,8 +250,16 @@ namespace OZHI_AWDS
             Main_Grid.Children.Add(txtBlock6);
             Main_Grid.Children.Add(txtBlock7);
             Main_Grid.Children.Add(txtBlock8);
+            Main_Grid.Children.Add(txtBlock9);
+            Main_Grid.Children.Add(txtBlock10);
+            Main_Grid.Children.Add(txtBlock11);
         }
-                                                                   
+
+        private void Initialize_Data()
+        {
+
+        }
+
         private void TxtBlock2_MouseLeave(object sender, MouseEventArgs e)
         {
             TextBlock tBlock = (TextBlock)sender;
@@ -241,6 +302,24 @@ namespace OZHI_AWDS
         private void TxtBlock8_MouseLeave(object sender, MouseEventArgs e)
         {
             txtBlock8.FontWeight = FontWeights.Normal;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void TxtBlock9_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void TxtBlock10_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtBlock10.FontWeight = FontWeights.Normal;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        private void TxtBlock11_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtBlock11.FontWeight = FontWeights.Normal;
             Mouse.OverrideCursor = Cursors.Arrow;
         }
         private void TxtBlock2_MouseEnter(object sender, MouseEventArgs e)
@@ -288,6 +367,24 @@ namespace OZHI_AWDS
             txtBlock8.FontWeight = FontWeights.Bold;
             Mouse.OverrideCursor = Cursors.Hand;
         }
+        private void TxtBlock9_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+        private void TxtBlock10_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtBlock10.FontWeight = FontWeights.Bold;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+        private void TxtBlock11_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtBlock11.FontWeight = FontWeights.Bold;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
         private void TxtBlock2_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Remove_Tabs();
@@ -317,9 +414,25 @@ namespace OZHI_AWDS
         }
         private void TxtBlock7_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            // TODO Report Estimate
         }
         private void TxtBlock8_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            // TODO Report Invitation to Bid
+        }
+        private void TxtBlock9_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Remove_Tabs();
+
+            Add_Tools_Tabs();
+        }
+        private void TxtBlock10_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // TODO Tools Business Day Calculator
+        }
+        private void TxtBlock11_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // TODO Tools Import CSV to Client List
         }
 
         private void FrameHolder_ContentRendered(object sender, EventArgs e)
@@ -348,14 +461,27 @@ namespace OZHI_AWDS
 
             if (!reportsClicked)
             {
-                //Main_Grid.RowDefinitions.Remove(RemoveRow);
-
                 double actualHeight = height / 2;
 
                 ReportsSubRow1.Height = new GridLength(25);
                 ReportsSubRow2.Height = new GridLength(25);
 
                 reportsClicked = true;
+            }
+        }
+
+        private void Add_Tools_Tabs()
+        {
+            double height = ClientRow.ActualHeight;
+
+            if (!toolsClicked)
+            {
+                double actualHeight = height / 2;
+
+                ToolsSubRow1.Height = new GridLength(25);
+                ToolsSubRow2.Height = new GridLength(25);
+
+                toolsClicked = true;
             }
         }
 
@@ -375,6 +501,13 @@ namespace OZHI_AWDS
                 ReportsSubRow2.Height = new GridLength(0);
 
                 reportsClicked = false;
+            }
+            if (toolsClicked)
+            {
+                ToolsSubRow1.Height = new GridLength(0);
+                ToolsSubRow2.Height = new GridLength(0);
+
+                toolsClicked = false;
             }
         }
     }

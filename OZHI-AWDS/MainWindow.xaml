@@ -68,7 +68,9 @@
                     <RowDefinition Name="ReportsSubRow1" Height="0" />
                     <RowDefinition Name="ReportsSubRow2" Height="0" />
                     <RowDefinition Name="ToolsRow" Height="50" />
-                    <RowDefinition Name="ToolsSubRow" Height="0" />
+                    <RowDefinition Name="ToolsSubRow1" Height="0" />
+                    <RowDefinition Name="ToolsSubRow2" Height="0" />
+                    <RowDefinition Name="Buffer" Height="100" />
                 </Grid.RowDefinitions>
                 <!--<TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Style="{StaticResource OpenSans}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="10,0,0,0">
                     <InlineUIContainer>
@@ -79,7 +81,7 @@
                 <!--<TextBlock Grid.Column="0" Grid.Row="1" Name="Main_Client" PreviewMouseUp="Main_Client_PreviewMouseUp" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Client</TextBlock>-->
                 <!--<TextBlock Grid.Column="0" Grid.Row="3" Name="Main_WD" PreviewMouseUp="Main_WD_PreviewMouseUp"  TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Work Description</TextBlock>-->
                 <!--<TextBlock Grid.Column="0" Grid.Row="6" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Reports</TextBlock>-->
-                <TextBlock Grid.Column="0" Grid.Row="9" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Tools</TextBlock>
+                <!--<TextBlock Grid.Column="0" Grid.Row="9" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Tools</TextBlock>-->
             </Grid>
             <Grid Name="MainPageHolder" Grid.Column="1">
                 <Frame Name="FrameHolder" ContentRendered="FrameHolder_ContentRendered" />

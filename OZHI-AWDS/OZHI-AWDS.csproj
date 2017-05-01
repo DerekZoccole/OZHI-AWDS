@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\EstimateDataSet.cs" />
     <Compile Include="Pages\BrowseClients.xaml.cs">
       <DependentUpon>BrowseClients.xaml</DependentUpon>
     </Compile>
@@ -133,11 +134,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EstimateEng.rdlc" />
     <EmbeddedResource Include="Reports\rptEngEstimate.rdlc" />
     <EmbeddedResource Include="Reports\rptEngBid.rdlc" />
     <None Include="packages.config" />
     <Resource Include="Fonts\OpenSans-Italic.ttf" />
     <Resource Include="Fonts\OpenSans-Regular.ttf" />
+    <None Include="Properties\DataSources\OZHI_AWDS.Classes.EstimateDataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

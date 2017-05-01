@@ -7,7 +7,7 @@
       xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="ReportViewerEstimate">
+      Title="ReportViewerEstimate" Loaded="Page_Loaded">
 
     <Grid>
         <WindowsFormsHost HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
