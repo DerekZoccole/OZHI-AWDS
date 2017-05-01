@@ -26,7 +26,7 @@
                           <TextRuns>
                             <TextRun>
                               <Label>Project</Label>
-                              <Value>="Project / Client / Property: " &amp; iif(isnothing(First(Fields!PROJECT.Value)), "", First(Fields!PROJECT.Value))</Value>
+                              <Value>=Fields!Project.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -95,10 +95,7 @@
                           <TextRuns>
                             <TextRun>
                               <Label>AlternateName</Label>
-                              <Value>="Alternate Name: " &amp; iif(IsNothing(First(Fields!SURNAME2.Value)), "", 
-Trim(First(Fields!SURNAME2.Value)) &amp; ", ") &amp; 
-iif(IsNothing(First(Fields!FIRSTNAME2.Value)), "", 
-trim(First(Fields!FIRSTNAME2.Value)))</Value>
+                              <Value>=Fields!ClientID.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -160,7 +157,7 @@ trim(First(Fields!FIRSTNAME2.Value)))</Value>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox129">
+                    <Textbox Name="Telephone">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -168,10 +165,7 @@ trim(First(Fields!FIRSTNAME2.Value)))</Value>
                           <TextRuns>
                             <TextRun>
                               <Label>Contact</Label>
-                              <Value>="Contact Name: " &amp; iif(IsNothing(First(Fields!SURNAME.Value)), "", 
-Trim(First(Fields!SURNAME.Value)) &amp; ", ") &amp; 
-iif(IsNothing(First(Fields!FIRSTNAME.Value)), "", 
-trim(First(Fields!FIRSTNAME.Value)))</Value>
+                              <Value>=Fields!Telephone.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -181,7 +175,7 @@ trim(First(Fields!FIRSTNAME.Value)))</Value>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox129</rd:DefaultName>
+                      <rd:DefaultName>Telephone</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -578,14 +572,30 @@ first(Fields!PREPARED2.Value))</Value>
                               </TablixCell>
                               <TablixCell>
                                 <CellContents>
-                                  <Rectangle Name="Rectangle1">
+                                  <Textbox Name="Mold">
+                                    <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=IIf(Fields!MOISTURE_MOLD.Value=-1,"Moisture and Mold Problems" &amp; VBCRLF, "") &amp; IIf(Fields!ASBESTOS.Value=-1,"Asbestos" &amp; VBCRLF, "") &amp; IIf(Fields!CONTAMINATION.Value=-1,"Contamination" &amp; VBCRLF, "") &amp; IIf(Fields!LEAD_PAINT.Value=-1,"Lead Based Paint" &amp; VBCRLF, "") &amp; IIf(Fields!FLOOD_MEASURES.Value=-1,"Flood Protection Measures", "")</Value>
+                                            <Style />
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
                                     <Style>
                                       <Border>
-                                        <Style>None</Style>
+                                        <Style>Solid</Style>
                                       </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
-                                  </Rectangle>
+                                  </Textbox>
                                 </CellContents>
                               </TablixCell>
                             </TablixCells>
@@ -1767,9 +1777,9 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
-        <DataSetName>dsEstimate</DataSetName>
+        <DataSetName>DataSet1</DataSetName>
         <Top>0.06252in</Top>
-        <Left>0.13356in</Left>
+        <Left>0.12742in</Left>
         <Height>5.55563in</Height>
         <Width>7.35863in</Width>
         <Style>
@@ -1784,7 +1794,7 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
       <Border />
     </Style>
   </Body>
-  <Width>19.4006cm</Width>
+  <Width>22.21603cm</Width>
   <Page>
     <PageHeader>
       <Height>3.11363cm</Height>
@@ -1812,7 +1822,7 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
             </Paragraph>
           </Paragraphs>
           <Top>0.25588cm</Top>
-          <Left>0.27591cm</Left>
+          <Left>0.27594cm</Left>
           <Height>0.78521cm</Height>
           <Width>18.75423cm</Width>
           <Style>
@@ -1869,7 +1879,7 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Parameters!pProgCode.Value</Value>
+                  <Value>=Fields!Service.Value</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -1882,8 +1892,8 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
           </Paragraphs>
           <Top>0.79875in</Top>
           <Left>0.11125in</Left>
-          <Height>0.78531cm</Height>
-          <Width>18.75423cm</Width>
+          <Height>0.35417in</Height>
+          <Width>1.89583in</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -1902,7 +1912,7 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Parameters!pDescription.Value</Value>
+                  <Value>=Fields!Service.Value</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -2060,11 +2070,194 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
       </ConnectionProperties>
       <rd:DataSourceID>b4dd64c5-508a-486b-9cc3-c517c0f8018c</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="OZHI_AWDSClasses">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>f8523c16-1e6a-486b-8d30-c118a2b6d901</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsEstimate">
       <Query>
         <DataSourceName>awdsDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="PROG_CODE">
+          <DataField>PROG_CODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CLIENT_NO">
+          <DataField>CLIENT_NO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PROJECT">
+          <DataField>PROJECT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SURNAME">
+          <DataField>SURNAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FIRSTNAME">
+          <DataField>FIRSTNAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SURNAME2">
+          <DataField>SURNAME2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FIRSTNAME2">
+          <DataField>FIRSTNAME2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ADDRESS">
+          <DataField>ADDRESS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LEGAL_DESC">
+          <DataField>LEGAL_DESC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CITY">
+          <DataField>CITY</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PROVINCE">
+          <DataField>PROVINCE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POSTAL">
+          <DataField>POSTAL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LOANTYPE">
+          <DataField>LOANTYPE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LOANTYPEF">
+          <DataField>LOANTYPEF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TELEPHONE">
+          <DataField>TELEPHONE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CMHC_NO">
+          <DataField>CMHC_NO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AGENT_NO">
+          <DataField>AGENT_NO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STAT_DATE">
+          <DataField>STAT_DATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="PREPARED1">
+          <DataField>PREPARED1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PREPARED2">
+          <DataField>PREPARED2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MOISTURE_MOLD">
+          <DataField>MOISTURE_MOLD</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="ASBESTOS">
+          <DataField>ASBESTOS</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="CONTAMINATION">
+          <DataField>CONTAMINATION</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="LEAD_PAINT">
+          <DataField>LEAD_PAINT</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="FLOOD_MEASURES">
+          <DataField>FLOOD_MEASURES</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="SortPriority">
+          <DataField>SortPriority</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="WORK_NO">
+          <DataField>WORK_NO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Priority_E">
+          <DataField>Priority_E</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Priority_F">
+          <DataField>Priority_F</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="URGENCY_E">
+          <DataField>URGENCY_E</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="URGENCY_F">
+          <DataField>URGENCY_F</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IMP_DESC">
+          <DataField>IMP_DESC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MET_DESC">
+          <DataField>MET_DESC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IMP_QTY">
+          <DataField>IMP_QTY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MET_QTY">
+          <DataField>MET_QTY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MAT_EST">
+          <DataField>MAT_EST</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="LAB_EST">
+          <DataField>LAB_EST</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="PHONE2">
+          <DataField>PHONE2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EL_CRIT">
+          <DataField>EL_CRIT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SPEC_TEXT">
+          <DataField>SPEC_TEXT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>awdsDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Documents and Settings\KLEBLANC\My Documents\CorporateServerApps\AWDS\awdsDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Estimate</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>EstimateTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>OZHI_AWDSClasses</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2088,6 +2281,14 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
           <DataField>CMHCAccountNumber</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ImperialDescription">
+          <DataField>ImperialDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ImperialQuanity">
+          <DataField>ImperialQuanity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="InspectionDate">
           <DataField>InspectionDate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -2098,6 +2299,10 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
         </Field>
         <Field Name="Inspector2">
           <DataField>Inspector2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LabourEstimate">
+          <DataField>LabourEstimate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="LegalDescription">
@@ -2112,8 +2317,24 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
           <DataField>LoanTypeF</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="MaterialEstimate">
+          <DataField>MaterialEstimate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MetricDescription">
+          <DataField>MetricDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MetricQuanity">
+          <DataField>MetricQuanity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="PostalCode">
           <DataField>PostalCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Priority">
+          <DataField>Priority</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Project">
@@ -2130,6 +2351,14 @@ iif(isnothing(Fields!MET_QTY.Value), "", Fields!MET_QTY.Value), "")</Value>
         </Field>
         <Field Name="Telephone">
           <DataField>Telephone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WorkSpecification">
+          <DataField>WorkSpecification</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WorkSpecificationDescription">
+          <DataField>WorkSpecificationDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
