@@ -414,7 +414,7 @@ namespace OZHI_AWDS
         }
         private void TxtBlock7_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            // TODO Report Estimate
+            FrameHolder.Navigate(new System.Uri("Pages/ReportViewerEstimate.xaml", UriKind.RelativeOrAbsolute));
         }
         private void TxtBlock8_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {

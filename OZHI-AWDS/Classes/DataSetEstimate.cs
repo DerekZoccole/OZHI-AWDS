@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OZHI_AWDS.Classes
 {
-    public class EstimateDataSet
+    public class DataSetEstimate
     {
         public string Service { get; set; }
         public string ServiceDescription { get; set; }
@@ -41,6 +41,6 @@ namespace OZHI_AWDS.Classes
         public string ImperialQuanity { get; set; }
         public string MetricQuanity { get; set; }
         public string MaterialEstimate { get; set; }
-        public string LabourEstimate { get; set; }        
+        public string LabourEstimate { get; set; }
     }
 }
