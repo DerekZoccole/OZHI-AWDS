@@ -42,5 +42,6 @@ namespace OZHI_AWDS.Classes
         public string MetricQuanity { get; set; }
         public string MaterialEstimate { get; set; }
         public string LabourEstimate { get; set; }
+        public string Total { get; set; }
     }
 }
