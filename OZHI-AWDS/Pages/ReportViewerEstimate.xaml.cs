@@ -65,7 +65,7 @@ namespace OZHI_AWDS.Pages
             dt.Columns.Add(new DataColumn("Address", typeof(string)));
             dt.Columns.Add(new DataColumn("CMHCAccountNumber", typeof(string)));
             dt.Columns.Add(new DataColumn("LegalDescription", typeof(string)));
-            dt.Columns.Add(new DataColumn("AgentInspectionNumber", typeof(string)));
+            dt.Columns.Add(new DataColumn("AgentReferenceNumber", typeof(string)));
             dt.Columns.Add(new DataColumn("City", typeof(string)));
             dt.Columns.Add(new DataColumn("Province", typeof(string)));
             dt.Columns.Add(new DataColumn("InspectionDate", typeof(string)));
@@ -99,11 +99,11 @@ namespace OZHI_AWDS.Pages
             dr1["LoanType"] = loanType + "Homeowner";
             dr1["LoanTypeF"] = "";
             dr1["Contact"] = contact + "Contact Name";
-            dr1["Telephone"] = telephone = "411";
+            dr1["Telephone"] = telephone + "411";
             dr1["Address"] = address + "123 Fake Street";
             dr1["CMHCAccountNumber"] = CMHCAccountNumber + "111-111-111";
             dr1["LegalDescription"] = legalDescription + "";
-            dr1["AgentInspectionNumber"] = agentReferenceNumber + "";
+            dr1["AgentReferenceNumber"] = agentReferenceNumber + "";
             dr1["City"] = city + "Thunder Bay";
             dr1["Province"] = "ON";
             dr1["InspectionDate"] = inspectionDate + "01/01/1900";
