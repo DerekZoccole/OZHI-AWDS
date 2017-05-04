@@ -332,12 +332,12 @@ namespace OZHI_AWDS
         }
         private void TxtBlock3_MouseEnter(object sender, MouseEventArgs e)
         {
-            txtBlock3.FontWeight = FontWeights.Bold;
+            txtBlock3.FontWeight = FontWeights.SemiBold;
             Mouse.OverrideCursor = Cursors.Hand;
         }
         private void TxtBlock4_MouseEnter(object sender, MouseEventArgs e)
         {
-            txtBlock4.FontWeight = FontWeights.Bold;
+            txtBlock4.FontWeight = FontWeights.SemiBold;
             Mouse.OverrideCursor = Cursors.Hand;
         }
 
@@ -359,12 +359,12 @@ namespace OZHI_AWDS
         }
         private void TxtBlock7_MouseEnter(object sender, MouseEventArgs e)
         {
-            txtBlock7.FontWeight = FontWeights.Bold;
+            txtBlock7.FontWeight = FontWeights.SemiBold;
             Mouse.OverrideCursor = Cursors.Hand;
         }
         private void TxtBlock8_MouseEnter(object sender, MouseEventArgs e)
         {
-            txtBlock8.FontWeight = FontWeights.Bold;
+            txtBlock8.FontWeight = FontWeights.SemiBold;
             Mouse.OverrideCursor = Cursors.Hand;
         }
         private void TxtBlock9_MouseEnter(object sender, MouseEventArgs e)
@@ -377,12 +377,12 @@ namespace OZHI_AWDS
         }
         private void TxtBlock10_MouseEnter(object sender, MouseEventArgs e)
         {
-            txtBlock10.FontWeight = FontWeights.Bold;
+            txtBlock10.FontWeight = FontWeights.SemiBold;
             Mouse.OverrideCursor = Cursors.Hand;
         }
         private void TxtBlock11_MouseEnter(object sender, MouseEventArgs e)
         {
-            txtBlock11.FontWeight = FontWeights.Bold;
+            txtBlock11.FontWeight = FontWeights.SemiBold;
             Mouse.OverrideCursor = Cursors.Hand;
         }
         private void TxtBlock2_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

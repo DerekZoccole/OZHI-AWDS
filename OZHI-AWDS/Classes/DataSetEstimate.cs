@@ -30,18 +30,5 @@ namespace OZHI_AWDS.Classes
         public string ItemCode { get; set; }
         public string WorkSpecification { get; set; }
         public string Estimate { get; set; }
-        public string WorkNumber { get; set; }
-        public string Priority { get; set; }
-        public string Section { get; set; }
-        public string Urgency { get; set; }
-        public string WorkSpecificationDescription { get; set; }
-        public string ImperialUnits { get; set; }
-        public string MetricDescription { get; set; }
-        public string ImperialDescription { get; set; }
-        public string ImperialQuanity { get; set; }
-        public string MetricQuanity { get; set; }
-        public string MaterialEstimate { get; set; }
-        public string LabourEstimate { get; set; }
-        public string Total { get; set; }
     }
 }

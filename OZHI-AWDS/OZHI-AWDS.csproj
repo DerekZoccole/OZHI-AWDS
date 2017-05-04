@@ -65,6 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\DataSetEstimate.cs" />
+    <Compile Include="Classes\DataSetEstimate2.cs" />
     <Compile Include="Classes\EstimateDataSet.cs" />
     <Compile Include="Pages\BrowseClients.xaml.cs">
       <DependentUpon>BrowseClients.xaml</DependentUpon>
@@ -141,6 +142,7 @@
     <Resource Include="Fonts\OpenSans-Italic.ttf" />
     <Resource Include="Fonts\OpenSans-Regular.ttf" />
     <None Include="Properties\DataSources\OZHI_AWDS.Classes.DataSetEstimate.datasource" />
+    <None Include="Properties\DataSources\OZHI_AWDS.Classes.DataSetEstimate2.datasource" />
     <None Include="Properties\DataSources\OZHI_AWDS.Classes.EstimateDataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OZHI - transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

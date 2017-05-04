@@ -23,6 +23,7 @@ namespace OZHI_AWDS.Pages
     public partial class ReportViewerEstimate : Page
     {
         DataTable dt;
+        DataTable dt2;
 
         double mat;
         double lab;
@@ -44,6 +45,8 @@ namespace OZHI_AWDS.Pages
         string itemCode = "Item Code";
         string workSpecification = "Work Item";
         string estimate = "Estimate";
+        string materialEstimate = "Material Estimate: ";
+        string labourEstimate = "Labour Estimate: ";
 
         public ReportViewerEstimate()
         {
@@ -75,20 +78,22 @@ namespace OZHI_AWDS.Pages
             dt.Columns.Add(new DataColumn("ItemCode", typeof(string)));
             dt.Columns.Add(new DataColumn("WorkSpecification", typeof(string)));
             dt.Columns.Add(new DataColumn("Estimate", typeof(string)));
-            dt.Columns.Add(new DataColumn("WorkNumber", typeof(string)));
-            dt.Columns.Add(new DataColumn("Priority", typeof(string)));
-            dt.Columns.Add(new DataColumn("Section", typeof(string)));
-            dt.Columns.Add(new DataColumn("Urgency", typeof(string)));
-            dt.Columns.Add(new DataColumn("WorkSpecificationDescription", typeof(string)));
-            dt.Columns.Add(new DataColumn("ImperialUnits", typeof(string)));
-            dt.Columns.Add(new DataColumn("MetricUnits", typeof(string)));
-            dt.Columns.Add(new DataColumn("ImperialDescription", typeof(string)));
-            dt.Columns.Add(new DataColumn("MetricDescription", typeof(string)));
-            dt.Columns.Add(new DataColumn("ImperialQuanity", typeof(string)));
-            dt.Columns.Add(new DataColumn("MetricQuanity", typeof(string)));
-            dt.Columns.Add(new DataColumn("MaterialEstimate", typeof(double)));
-            dt.Columns.Add(new DataColumn("LabourEstimate", typeof(double)));
-            dt.Columns.Add(new DataColumn("Total", typeof(double)));
+
+            dt2 = new DataTable();
+            dt2.Columns.Add(new DataColumn("WorkNumber", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Priority", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Section", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Urgency", typeof(string)));
+            dt2.Columns.Add(new DataColumn("WorkSpecificationDescription", typeof(string)));
+            dt2.Columns.Add(new DataColumn("ImperialUnits", typeof(string)));
+            dt2.Columns.Add(new DataColumn("MetricUnits", typeof(string)));
+            dt2.Columns.Add(new DataColumn("ImperialDescription", typeof(string)));
+            dt2.Columns.Add(new DataColumn("MetricDescription", typeof(string)));
+            dt2.Columns.Add(new DataColumn("ImperialQuanity", typeof(string)));
+            dt2.Columns.Add(new DataColumn("MetricQuanity", typeof(string)));
+            dt2.Columns.Add(new DataColumn("MaterialEstimate", typeof(string)));
+            dt2.Columns.Add(new DataColumn("LabourEstimate", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Total", typeof(double)));
 
             DataRow dr1 = dt.NewRow();
             dr1["Service"] = "RRAP";
@@ -113,31 +118,85 @@ namespace OZHI_AWDS.Pages
             dr1["ItemCode"] = itemCode;
             dr1["WorkSpecification"] = workSpecification;
             dr1["Estimate"] = estimate;
-            dr1["WorkNumber"] = "0 09260B";
-            dr1["Priority"] = "Eligible";
-            dr1["Section"] = "Section (7.2)";
-            dr1["Urgency"] = "MEDIUM";
-            dr1["WorkSpecificationDescription"] = "Supply labour and materials to install 12mm (1/2 inch) gypsum board to finish interior walls.  Joint fill tape and sand ready for painting.  Paint all wals and ceiling with primer sealer and 2 finish coats.  LOCATION: all rooms";
-            dr1["ImperialUnits"] = "";
-            dr1["MetricUnits"] = "";
-            dr1["ImperialDescription"] = "";
-            dr1["MetricDescription"] = "";
-            dr1["ImperialQuanity"] = "";
-            dr1["MetricQuanity"] = "";
-            dr1["MaterialEstimate"] = 1200;
-            dr1["LabourEstimate"] = 2750;
-            mat = (double)dr1["MaterialEstimate"];
-            lab = (double)dr1["LabourEstimate"];
-            dr1["Total"] = mat + lab;
             dt.Rows.Add(dr1);
+
+            DataRow dr2 = dt2.NewRow();
+            dr2["WorkNumber"] = "0 09260B";
+            dr2["Priority"] = "Eligible";
+            dr2["Section"] = "Section (7.2)";
+            dr2["Urgency"] = "MEDIUM";
+            dr2["WorkSpecificationDescription"] = "Supply labour and materials to install 12mm (1/2 inch) gypsum board to finish interior walls.  Joint fill tape and sand ready for painting.  Paint all wals and ceiling with primer sealer and 2 finish coats.  LOCATION: all rooms";
+            dr2["ImperialUnits"] = "";
+            dr2["MetricUnits"] = "";
+            dr2["ImperialDescription"] = "";
+            dr2["MetricDescription"] = "";
+            dr2["ImperialQuanity"] = "";
+            dr2["MetricQuanity"] = "";
+            dr2["MaterialEstimate"] = materialEstimate + ConvertToCurrency(1200);
+            dr2["LabourEstimate"] = labourEstimate + ConvertToCurrency(2750);
+            mat = FindDouble(dr2["MaterialEstimate"]);
+            lab = FindDouble(dr2["LabourEstimate"]);
+            dr2["Total"] = mat + lab;
+            dt2.Rows.Add(dr2);
+
+            DataRow dr3 = dt2.NewRow();
+            dr3["WorkNumber"] = "0 07210A";
+            dr3["Priority"] = "Mandatory";
+            dr3["Section"] = "Section (6.1)";
+            dr3["Urgency"] = "HIGH";
+            dr3["WorkSpecificationDescription"] = "Supply and install insulation to the attic area to min R-42.  Work to include installation of insulation stops at soffit vents, insulating shields around chimneys, and weatherstripping the attic hatch c/w roof vents.";
+            dr3["ImperialUnits"] = "";
+            dr3["MetricUnits"] = "";
+            dr3["ImperialDescription"] = "";
+            dr3["MetricDescription"] = "";
+            dr3["ImperialQuanity"] = "";
+            dr3["MetricQuanity"] = "";
+            dr3["MaterialEstimate"] = materialEstimate + ConvertToCurrency(1750);
+            dr3["LabourEstimate"] = labourEstimate + ConvertToCurrency(1250);
+            mat = FindDouble(dr3["MaterialEstimate"]);
+            lab = FindDouble(dr3["LabourEstimate"]);
+            dr3["Total"] = mat + lab;
+            dt2.Rows.Add(dr3);
 
             ReportDataSource reportDataSource = new ReportDataSource();
             reportDataSource.Name = "DataSet1";
             reportDataSource.Value = dt;
-            reportViewerEstimate.LocalReport.ReportPath = "C:\\Users\\Derek Z\\documents\\visual studio 2015\\Projects\\OZHI-AWDS\\OZHI-AWDS\\Reports\\EstimateEng.rdlc";
 
+            ReportDataSource reportDataSource2 = new ReportDataSource();
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = dt2;
+
+            reportViewerEstimate.LocalReport.ReportPath = "C:\\Users\\Derek Z\\documents\\visual studio 2015\\Projects\\OZHI-AWDS\\OZHI-AWDS\\Reports\\EstimateEng.rdlc";
+            reportViewerEstimate.LocalReport.EnableExternalImages = true;
             reportViewerEstimate.LocalReport.DataSources.Add(reportDataSource);
+            reportViewerEstimate.LocalReport.DataSources.Add(reportDataSource2);
             reportViewerEstimate.RefreshReport();
+        }
+
+        private string ConvertToCurrency(int v)
+        {
+            string s = (v / 1m).ToString("C2");
+
+            return s;
+        }
+
+        private double FindDouble(object v)
+        {
+            string s = (string)v;
+            string sub;
+            int index = s.LastIndexOf(' ') + 1;
+
+            // Find substring of last whitespace to isolate number
+            sub = s.Substring(index);
+
+            // Remove $
+
+            // Remove ,
+
+            // Return double
+            Console.WriteLine(sub);
+
+            return 0.0;
         }
     }
 }
