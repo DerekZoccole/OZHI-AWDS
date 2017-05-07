@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,13 @@ namespace OZHI_AWDS.Pages
     {
         DataTable dt;
         DataTable dt2;
+        DataTable dt3;
 
         double mat;
         double lab;
+        double totalMaterial;
+        double totalLabour;
+        double grandTotal;
 
         string project = "Project / Client / Property: ";
         string clientID = "Client ID No.: ";
@@ -47,6 +52,9 @@ namespace OZHI_AWDS.Pages
         string estimate = "Estimate";
         string materialEstimate = "Material Estimate: ";
         string labourEstimate = "Labour Estimate: ";
+        string totalMaterial2 = "Total Estimate: ";
+        string totalLabout2 = "Total Labour: ";
+        string grandTotal2 = "Grand Total: ";
 
         public ReportViewerEstimate()
         {
@@ -54,6 +62,122 @@ namespace OZHI_AWDS.Pages
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            CreateDataTables();
+
+            CreateHeaderRows(dt);
+
+            CreateBodyRows(dt2, dt3);
+
+            ReportDataSource reportDataSource = new ReportDataSource();
+            reportDataSource.Name = "DataSet1";
+            reportDataSource.Value = dt;
+
+            ReportDataSource reportDataSource2 = new ReportDataSource();
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = dt2;
+
+            ReportDataSource reportDataSource3 = new ReportDataSource();
+            reportDataSource3.Name = "DataSet3";
+            reportDataSource3.Value = dt3;
+
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            reportViewerEstimate.LocalReport.ReportPath = path + "\\Reports\\EstimateEng.rdlc";
+
+            reportViewerEstimate.LocalReport.EnableExternalImages = true;
+            reportViewerEstimate.LocalReport.DataSources.Add(reportDataSource);
+            reportViewerEstimate.LocalReport.DataSources.Add(reportDataSource2);
+            reportViewerEstimate.LocalReport.DataSources.Add(reportDataSource3);
+            reportViewerEstimate.RefreshReport();
+        }
+
+        private void CreateBodyRows(DataTable dt1, DataTable dt2)
+        {
+            double m;
+            double l;
+
+            DataRow dr1 = dt1.NewRow();
+            dr1["WorkNumber"] = "0 09260B";
+            dr1["Priority"] = "Eligible";
+            dr1["Section"] = "Section (7.2)";
+            dr1["Urgency"] = "MEDIUM";
+            dr1["WorkSpecificationDescription"] = "Supply labour and materials to install 12mm (1/2 inch) gypsum board to finish interior walls.  Joint fill tape and sand ready for painting.  Paint all wals and ceiling with primer sealer and 2 finish coats.  LOCATION: all rooms";
+            dr1["ImperialUnits"] = "";
+            dr1["MetricUnits"] = "";
+            dr1["ImperialDescription"] = "";
+            dr1["MetricDescription"] = "";
+            dr1["ImperialQuanity"] = "";
+            dr1["MetricQuanity"] = "";
+
+            m = 1200.0;
+            l = 2750.0;
+            dr1["MaterialEstimate"] = materialEstimate + ConvertToCurrency(m);
+            dr1["LabourEstimate"] = labourEstimate + ConvertToCurrency(l);
+            totalMaterial += m;
+            totalLabour += l;
+            grandTotal += m + l;
+            dr1["Total"] = m + l;
+            dt1.Rows.Add(dr1);
+
+            DataRow dr2 = dt1.NewRow();
+            dr2["WorkNumber"] = "0 07210A";
+            dr2["Priority"] = "Mandatory";
+            dr2["Section"] = "Section (6.1)";
+            dr2["Urgency"] = "HIGH";
+            dr2["WorkSpecificationDescription"] = "Supply and install insulation to the attic area to min R-42.  Work to include installation of insulation stops at soffit vents, insulating shields around chimneys, and weatherstripping the attic hatch c/w roof vents.";
+            dr2["ImperialUnits"] = "";
+            dr2["MetricUnits"] = "";
+            dr2["ImperialDescription"] = "";
+            dr2["MetricDescription"] = "";
+            dr2["ImperialQuanity"] = "";
+            dr2["MetricQuanity"] = "";
+
+            m = 1750.0;
+            l = 1250.0;
+            dr2["MaterialEstimate"] = materialEstimate + ConvertToCurrency(m);
+            dr2["LabourEstimate"] = labourEstimate + ConvertToCurrency(l);
+            totalMaterial += m;
+            totalLabour += l;
+            grandTotal += m + l;
+            dr2["Total"] = m + l;
+            dt1.Rows.Add(dr2);
+
+            DataRow dr3 = dt2.NewRow();
+            dr3["TotalMaterial"] = totalMaterial2 + ConvertToCurrency(totalMaterial);
+            dr3["TotalLabour"] = totalLabout2 + ConvertToCurrency(totalLabour);
+            dr3["GrandTotal"] = grandTotal2 + ConvertToCurrency(grandTotal);
+            dt2.Rows.Add(dr3);
+        }
+
+        private void CreateHeaderRows(DataTable dt)
+        {
+            DataRow dr = dt.NewRow();
+            dr["Service"] = "RRAP";
+            dr["ServiceDescription"] = "Residential Rehabilitation Assistance Program";
+            dr["Project"] = project + "Address";
+            dr["ClientID"] = clientID + 1;
+            dr["AlternateName"] = alternateName + "Alternate Name";
+            dr["LoanType"] = loanType + "Homeowner";
+            dr["LoanTypeF"] = "";
+            dr["Contact"] = contact + "Contact Name";
+            dr["Telephone"] = telephone + "411";
+            dr["Address"] = address + "123 Fake Street";
+            dr["CMHCAccountNumber"] = CMHCAccountNumber + "111-111-111";
+            dr["LegalDescription"] = legalDescription + "";
+            dr["AgentReferenceNumber"] = agentReferenceNumber + "";
+            dr["City"] = city + "Thunder Bay";
+            dr["Province"] = "ON";
+            dr["InspectionDate"] = inspectionDate + "01/01/1900";
+            dr["PostalCode"] = postalCode + "A1A1A1";
+            dr["Inspector1"] = inspector + "Derek Zoccole";
+            dr["Inspector2"] = "";
+            dr["ItemCode"] = itemCode;
+            dr["WorkSpecification"] = workSpecification;
+            dr["Estimate"] = estimate;
+            dt.Rows.Add(dr);
+        }
+
+        private void CreateDataTables()
         {
             dt = new DataTable();
             dt.Columns.Add(new DataColumn("Service", typeof(string)));
@@ -95,88 +219,15 @@ namespace OZHI_AWDS.Pages
             dt2.Columns.Add(new DataColumn("LabourEstimate", typeof(string)));
             dt2.Columns.Add(new DataColumn("Total", typeof(double)));
 
-            DataRow dr1 = dt.NewRow();
-            dr1["Service"] = "RRAP";
-            dr1["ServiceDescription"] = "Residential Rehabilitation Assistance Program";
-            dr1["Project"] = project + "Address";
-            dr1["ClientID"] = clientID + 1;
-            dr1["AlternateName"] = alternateName + "Alternate Name";
-            dr1["LoanType"] = loanType + "Homeowner";
-            dr1["LoanTypeF"] = "";
-            dr1["Contact"] = contact + "Contact Name";
-            dr1["Telephone"] = telephone + "411";
-            dr1["Address"] = address + "123 Fake Street";
-            dr1["CMHCAccountNumber"] = CMHCAccountNumber + "111-111-111";
-            dr1["LegalDescription"] = legalDescription + "";
-            dr1["AgentReferenceNumber"] = agentReferenceNumber + "";
-            dr1["City"] = city + "Thunder Bay";
-            dr1["Province"] = "ON";
-            dr1["InspectionDate"] = inspectionDate + "01/01/1900";
-            dr1["PostalCode"] = postalCode + "A1A1A1";
-            dr1["Inspector1"] = inspector + "Derek Zoccole";
-            dr1["Inspector2"] = "";
-            dr1["ItemCode"] = itemCode;
-            dr1["WorkSpecification"] = workSpecification;
-            dr1["Estimate"] = estimate;
-            dt.Rows.Add(dr1);
-
-            DataRow dr2 = dt2.NewRow();
-            dr2["WorkNumber"] = "0 09260B";
-            dr2["Priority"] = "Eligible";
-            dr2["Section"] = "Section (7.2)";
-            dr2["Urgency"] = "MEDIUM";
-            dr2["WorkSpecificationDescription"] = "Supply labour and materials to install 12mm (1/2 inch) gypsum board to finish interior walls.  Joint fill tape and sand ready for painting.  Paint all wals and ceiling with primer sealer and 2 finish coats.  LOCATION: all rooms";
-            dr2["ImperialUnits"] = "";
-            dr2["MetricUnits"] = "";
-            dr2["ImperialDescription"] = "";
-            dr2["MetricDescription"] = "";
-            dr2["ImperialQuanity"] = "";
-            dr2["MetricQuanity"] = "";
-            dr2["MaterialEstimate"] = materialEstimate + ConvertToCurrency(1200);
-            dr2["LabourEstimate"] = labourEstimate + ConvertToCurrency(2750);
-            mat = FindDouble(dr2["MaterialEstimate"]);
-            lab = FindDouble(dr2["LabourEstimate"]);
-            dr2["Total"] = mat + lab;
-            dt2.Rows.Add(dr2);
-
-            DataRow dr3 = dt2.NewRow();
-            dr3["WorkNumber"] = "0 07210A";
-            dr3["Priority"] = "Mandatory";
-            dr3["Section"] = "Section (6.1)";
-            dr3["Urgency"] = "HIGH";
-            dr3["WorkSpecificationDescription"] = "Supply and install insulation to the attic area to min R-42.  Work to include installation of insulation stops at soffit vents, insulating shields around chimneys, and weatherstripping the attic hatch c/w roof vents.";
-            dr3["ImperialUnits"] = "";
-            dr3["MetricUnits"] = "";
-            dr3["ImperialDescription"] = "";
-            dr3["MetricDescription"] = "";
-            dr3["ImperialQuanity"] = "";
-            dr3["MetricQuanity"] = "";
-            dr3["MaterialEstimate"] = materialEstimate + ConvertToCurrency(1750);
-            dr3["LabourEstimate"] = labourEstimate + ConvertToCurrency(1250);
-            mat = FindDouble(dr3["MaterialEstimate"]);
-            lab = FindDouble(dr3["LabourEstimate"]);
-            dr3["Total"] = mat + lab;
-            dt2.Rows.Add(dr3);
-
-            ReportDataSource reportDataSource = new ReportDataSource();
-            reportDataSource.Name = "DataSet1";
-            reportDataSource.Value = dt;
-
-            ReportDataSource reportDataSource2 = new ReportDataSource();
-            reportDataSource2.Name = "DataSet2";
-            reportDataSource2.Value = dt2;
-
-            reportViewerEstimate.LocalReport.ReportPath = "C:\\Users\\Derek Z\\documents\\visual studio 2015\\Projects\\OZHI-AWDS\\OZHI-AWDS\\Reports\\EstimateEng.rdlc";
-            reportViewerEstimate.LocalReport.EnableExternalImages = true;
-            reportViewerEstimate.LocalReport.DataSources.Add(reportDataSource);
-            reportViewerEstimate.LocalReport.DataSources.Add(reportDataSource2);
-            reportViewerEstimate.RefreshReport();
+            dt3 = new DataTable();
+            dt3.Columns.Add(new DataColumn("TotalMaterial", typeof(string)));
+            dt3.Columns.Add(new DataColumn("TotalLabour", typeof(string)));
+            dt3.Columns.Add(new DataColumn("GrandTotal", typeof(string)));
         }
 
-        private string ConvertToCurrency(int v)
+        private string ConvertToCurrency(double v)
         {
-            string s = (v / 1m).ToString("C2");
-
+            string s = v.ToString("C2");
             return s;
         }
 
