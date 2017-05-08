@@ -30,5 +30,6 @@ namespace OZHI_AWDS.Classes
         public string ItemCode { get; set; }
         public string WorkSpecification { get; set; }
         public string Estimate { get; set; }
+        public string Require { get; set; }
     }
 }

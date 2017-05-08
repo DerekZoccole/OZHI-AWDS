@@ -10,6 +10,8 @@ namespace OZHI_AWDS.Classes
     {
         public string TotalMaterial { get; set; }
         public string TotalLabour { get; set; }
+        public string TotalGST { get; set; }
+        public string TotalPST { get; set; }
         public string GrandTotal { get; set; }
     }
 }

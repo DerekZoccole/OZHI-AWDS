@@ -21,6 +21,8 @@ namespace OZHI_AWDS.Classes
         public string MetricQuanity { get; set; }
         public string MaterialEstimate { get; set; }
         public string LabourEstimate { get; set; }
+        public string GST { get; set; }
+        public string PST { get; set; }
         public string Total { get; set; }
         public string GrandTotal { get; set; }
     }

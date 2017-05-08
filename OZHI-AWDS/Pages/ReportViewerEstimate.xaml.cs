@@ -124,7 +124,17 @@ namespace OZHI_AWDS.Pages
             dr2["Priority"] = "Mandatory";
             dr2["Section"] = "Section (6.1)";
             dr2["Urgency"] = "HIGH";
-            dr2["WorkSpecificationDescription"] = "Supply and install insulation to the attic area to min R-42.  Work to include installation of insulation stops at soffit vents, insulating shields around chimneys, and weatherstripping the attic hatch c/w roof vents.";
+            dr2["WorkSpecificationDescription"] = "Remove existing stairs landing. Supply material and labour to install new wood landing and stairs conforming" +
+"\nto the following dimensions:" +
+"\nmaximum rise 8" + 
+"\n- minimum run 10" +
+"\n- minimum tread 11." +
+"\n- stair width to be 4" +
+"\nWhere steps constitute more than 3 risers, a handrail shall be installed on one side if adjacent to wall and both" +
+"\nsides if located at leading edge of landing.Railing construction shall conform to current code requirements." +
+"\nMaximum landing size to be 6 by 8 feet.All material at building exterior or in contact with soil to be pressure" +
+"\ntreated." +
+"\nLOCATION: main and side entry";
             dr2["ImperialUnits"] = "";
             dr2["MetricUnits"] = "";
             dr2["ImperialDescription"] = "";
@@ -141,6 +151,29 @@ namespace OZHI_AWDS.Pages
             grandTotal += m + l;
             dr2["Total"] = m + l;
             dt1.Rows.Add(dr2);
+
+            DataRow dr4 = dt1.NewRow();
+            dr4["WorkNumber"] = "0 07210A";
+            dr4["Priority"] = "Mandatory";
+            dr4["Section"] = "Section (6.1)";
+            dr4["Urgency"] = "HIGH";
+            dr4["WorkSpecificationDescription"] = "Supply and install insulation to the attic area to min R-42.  Work to include installation of insulation stops at soffit vents, insulating shields around chimneys, and weatherstripping the attic hatch c/w roof vents.";
+            dr4["ImperialUnits"] = "";
+            dr4["MetricUnits"] = "";
+            dr4["ImperialDescription"] = "";
+            dr4["MetricDescription"] = "";
+            dr4["ImperialQuanity"] = "";
+            dr4["MetricQuanity"] = "";
+
+            m = 1750.0;
+            l = 1250.0;
+            dr4["MaterialEstimate"] = materialEstimate + ConvertToCurrency(m);
+            dr4["LabourEstimate"] = labourEstimate + ConvertToCurrency(l);
+            totalMaterial += m;
+            totalLabour += l;
+            grandTotal += m + l;
+            dr4["Total"] = m + l;
+            dt1.Rows.Add(dr4);
 
             DataRow dr3 = dt2.NewRow();
             dr3["TotalMaterial"] = totalMaterial2 + ConvertToCurrency(totalMaterial);
