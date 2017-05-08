@@ -418,7 +418,7 @@ namespace OZHI_AWDS
         }
         private void TxtBlock8_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            // TODO Report Invitation to Bid
+            FrameHolder.Navigate(new System.Uri("Pages/ReportViewerBid.xaml", UriKind.RelativeOrAbsolute));
         }
         private void TxtBlock9_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {

@@ -20,9 +20,13 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.1*"/>
-            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="0.1*"/>            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -47,8 +51,8 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION</Bold></TextBlock>
-        <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION</Bold></TextBlock>
+        <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="FirstNationTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -57,8 +61,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION CONTACT NAME</Bold></TextBlock>
-        <Grid Grid.Row="3" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION CONTACT NAME</Bold></TextBlock>
+        <Grid Grid.Row="3" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="FirstNationContactNameTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -67,8 +71,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION CONTACT PHONE</Bold></TextBlock>
-        <Grid Grid.Row="5" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION CONTACT PHONE</Bold></TextBlock>
+        <Grid Grid.Row="5" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="FirstNationContactPhoneTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -77,8 +81,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION CONTACT EMAIL</Bold></TextBlock>
-        <Grid Grid.Row="7" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>FIRST NATION CONTACT EMAIL</Bold></TextBlock>
+        <Grid Grid.Row="7" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="FirstNationContactEmailTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -87,8 +91,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="9" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>APPLICANT NAME</Bold></TextBlock>
-        <Grid Grid.Row="10" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>APPLICANT NAME</Bold></TextBlock>
+        <Grid Grid.Row="10" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="ApplicantNameTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -97,8 +101,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="11" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>ADDRESS</Bold></TextBlock>
-        <Grid Grid.Row="12" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>ADDRESS</Bold></TextBlock>
+        <Grid Grid.Row="12" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="AddressTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -107,8 +111,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="13" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>CITY</Bold></TextBlock>
-        <Grid Grid.Row="14" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CITY</Bold></TextBlock>
+        <Grid Grid.Row="14" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="CityTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -117,8 +121,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="15" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>PROVINCE</Bold></TextBlock>
-        <Grid Grid.Row="16" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>PROVINCE</Bold></TextBlock>
+        <Grid Grid.Row="16" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="ProvinceTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -127,8 +131,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="17" Grid.Column="1" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>POSTAL CODE</Bold></TextBlock>
-        <Grid Grid.Row="18" Grid.Column="1" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>POSTAL CODE</Bold></TextBlock>
+        <Grid Grid.Row="18" Grid.Column="2" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="PostalCodeTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -137,8 +141,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>CMHC ACCOUNT NUMBER</Bold></TextBlock>
-        <Grid Grid.Row="1" Grid.Column="3" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="0" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC ACCOUNT NUMBER</Bold></TextBlock>
+        <Grid Grid.Row="1" Grid.Column="6" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="CMHCAccountNumberTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -147,8 +151,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>CMHC CONTACT NAME</Bold></TextBlock>
-        <Grid Grid.Row="3" Grid.Column="3" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="2" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC CONTACT NAME</Bold></TextBlock>
+        <Grid Grid.Row="3" Grid.Column="6" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="CMHCContactNameTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -157,8 +161,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>CMHC CONTACT PHONE</Bold></TextBlock>
-        <Grid Grid.Row="5" Grid.Column="3" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="4" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC CONTACT PHONE</Bold></TextBlock>
+        <Grid Grid.Row="5" Grid.Column="6" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="CMHCContactPhoneTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -167,8 +171,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>CMHC CONTACT EMAIL</Bold></TextBlock>
-        <Grid Grid.Row="7" Grid.Column="3" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="6" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC CONTACT EMAIL</Bold></TextBlock>
+        <Grid Grid.Row="7" Grid.Column="6" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="CMHCContactEmailTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -177,8 +181,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>CMHC REQUEST DATE</Bold></TextBlock>
-        <Grid Grid.Row="10" Grid.Column="3" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="9" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC REQUEST DATE</Bold></TextBlock>
+        <Grid Grid.Row="10" Grid.Column="6" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="CMHCRequestDateTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -187,8 +191,8 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="11" Grid.Column="3" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="20,0,5,2"><Bold>CMHC DATE REQUIRED</Bold></TextBlock>
-        <Grid Grid.Row="12" Grid.Column="3" Style="{StaticResource EntryFieldStyle}">
+        <TextBlock Grid.Row="11" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC DATE REQUIRED</Bold></TextBlock>
+        <Grid Grid.Row="12" Grid.Column="6" Style="{StaticResource EntryFieldStyle}">
             <AdornerDecorator>
                 <TextBox x:Name="CMHCDateRequiredTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>
@@ -197,7 +201,7 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <Button Grid.Column="3" Grid.Row="19" Name="NewClientSaveButton" Content="Save" HorizontalAlignment="Right" Margin="0,0,100,0" VerticalAlignment="Center" Click="Button_Click" Background="#8BC63E" Foreground="White" Padding="0" BorderThickness="0" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+        <Button Grid.Column="6" Grid.Row="19" Name="NewClientSaveButton" Content="Save" HorizontalAlignment="Right" Margin="0,0,100,0" VerticalAlignment="Center" Click="Button_Click" Background="#8BC63E" Foreground="White" Padding="0" BorderThickness="0" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text=" Save " Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Padding="20,10,20,10">
@@ -214,7 +218,7 @@
                 </DataTemplate>
             </Button.ContentTemplate>
         </Button>
-        <Button Grid.Column="3" Grid.Row="19" Name="NewClientCancelButton" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" Click="Button_Click_1" Background="#777777" Foreground="White" Padding="0" BorderThickness="0" MouseEnter="NewClientCancelButton_MouseEnter" MouseLeave="NewClientCancelButton_MouseLeave">
+        <Button Grid.Column="6" Grid.Row="19" Name="NewClientCancelButton" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center" Click="Button_Click_1" Background="#777777" Foreground="White" Padding="0" BorderThickness="0" MouseEnter="NewClientCancelButton_MouseEnter" MouseLeave="NewClientCancelButton_MouseLeave">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <TextBlock Text="Cancel" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Padding="20,10,20,10">

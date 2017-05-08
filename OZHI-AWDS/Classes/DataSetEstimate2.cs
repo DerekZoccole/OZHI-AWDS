@@ -24,6 +24,5 @@ namespace OZHI_AWDS.Classes
         public string GST { get; set; }
         public string PST { get; set; }
         public string Total { get; set; }
-        public string GrandTotal { get; set; }
     }
 }

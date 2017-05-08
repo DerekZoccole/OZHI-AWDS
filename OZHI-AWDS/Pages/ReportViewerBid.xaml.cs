@@ -27,6 +27,8 @@ namespace OZHI_AWDS.Pages
         DataTable dt2;
         DataTable dt3;
 
+        string space = "_________________";
+
         string project = "Project / Client / Property: ";
         string clientID = "Client ID No.: ";
         string alternateName = "Alternate Name: ";
@@ -43,12 +45,19 @@ namespace OZHI_AWDS.Pages
         string inspector = "Tech. Officer: ";
         string itemCode = "Item Code";
         string workSpecification = "Work Item";
-        string estimate = "Estimate";
+        string estimate = "Bid";
         string materialEstimate = "Material Estimate: ";
         string labourEstimate = "Labour Estimate: ";
-        string totalMaterial2 = "Total Estimate: ";
-        string totalLabout2 = "Total Labour: ";
+        string GSTEstimate = "GST: ";
+        string PSTEstimate = "PST: ";
+        string Total = "Total: ";
+        string Subtotal = "Sub Total: ";
+        string TotalGST = "Total GST: ";
+        string TotalPST = "Total PST: ";
         string grandTotal2 = "Grand Total: ";
+        string contractorName = "Contractor Name";
+        string date = "Date";
+        string GSTRegistrationNumber = "GST Registration Number";
 
         string require = "NOTE: The following is a list of work items approved, by Canada Mortgage and Housing Corporation in" +
 "\nconsultation with the owner, for rehabilitation under the RRAP(Residential Rehabilitation Assistance" +
@@ -95,7 +104,7 @@ namespace OZHI_AWDS.Pages
             reportDataSource3.Value = dt3;
 
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            reportViewerBid.LocalReport.ReportPath = path + "\\Reports\\EstimateEng.rdlc";
+            reportViewerBid.LocalReport.ReportPath = path + "\\Reports\\BidEng.rdlc";
 
             reportViewerBid.LocalReport.EnableExternalImages = true;
             reportViewerBid.LocalReport.DataSources.Add(reportDataSource);
@@ -118,9 +127,11 @@ namespace OZHI_AWDS.Pages
             dr1["MetricDescription"] = "";
             dr1["ImperialQuanity"] = "";
             dr1["MetricQuanity"] = "";
-            dr1["MaterialEstimate"] = "";
-            dr1["LabourEstimate"] = "";
-            dr1["Total"] = "";
+            dr1["MaterialEstimate"] = materialEstimate + space;
+            dr1["LabourEstimate"] = labourEstimate + space;
+            dr1["GST"] = GSTEstimate + space;
+            dr1["PST"] = PSTEstimate + space;
+            dr1["Total"] = Total + space;
             dt1.Rows.Add(dr1);
 
             DataRow dr2 = dt1.NewRow();
@@ -145,9 +156,11 @@ namespace OZHI_AWDS.Pages
             dr2["MetricDescription"] = "";
             dr2["ImperialQuanity"] = "";
             dr2["MetricQuanity"] = "";
-            dr2["MaterialEstimate"] = "";
-            dr2["LabourEstimate"] = "";
-            dr2["Total"] = "";
+            dr2["MaterialEstimate"] = materialEstimate + space;
+            dr2["LabourEstimate"] = labourEstimate + space;
+            dr2["GST"] = GSTEstimate + space;
+            dr2["PST"] = PSTEstimate + space;
+            dr2["Total"] = Total + space;
             dt1.Rows.Add(dr2);
 
             DataRow dr4 = dt1.NewRow();
@@ -162,15 +175,23 @@ namespace OZHI_AWDS.Pages
             dr4["MetricDescription"] = "";
             dr4["ImperialQuanity"] = "";
             dr4["MetricQuanity"] = "";
-            dr4["MaterialEstimate"] = "";
-            dr4["LabourEstimate"] = "";
-            dr4["Total"] = "";
+            dr4["MaterialEstimate"] = materialEstimate + space;
+            dr4["LabourEstimate"] = labourEstimate + space;
+            dr4["GST"] = GSTEstimate + space;
+            dr4["PST"] = PSTEstimate + space;
+            dr4["Total"] = Total + space;
             dt1.Rows.Add(dr4);
 
             DataRow dr3 = dt2.NewRow();
+            dr3["SubTotal"] = Subtotal + space;
+            dr3["TotalGST"] = TotalGST + space;
+            dr3["TotalPST"] = TotalPST + space;
             dr3["TotalMaterial"] = "";
             dr3["TotalLabour"] = "";
-            dr3["GrandTotal"] = "";
+            dr3["GrandTotal"] = grandTotal2 + space;
+            dr3["ContractorName"] = contractorName;
+            dr3["Date"] = date;
+            dr3["GSTRegistrationNumber"] = GSTRegistrationNumber;
             dt2.Rows.Add(dr3);
         }
 
@@ -199,6 +220,7 @@ namespace OZHI_AWDS.Pages
             dr["ItemCode"] = itemCode;
             dr["WorkSpecification"] = workSpecification;
             dr["Estimate"] = estimate;
+            dr["Require"] = require;
             dt.Rows.Add(dr);
         }
 
@@ -227,6 +249,7 @@ namespace OZHI_AWDS.Pages
             dt.Columns.Add(new DataColumn("ItemCode", typeof(string)));
             dt.Columns.Add(new DataColumn("WorkSpecification", typeof(string)));
             dt.Columns.Add(new DataColumn("Estimate", typeof(string)));
+            dt.Columns.Add(new DataColumn("Require", typeof(string)));
 
             dt2 = new DataTable();
             dt2.Columns.Add(new DataColumn("WorkNumber", typeof(string)));
@@ -244,14 +267,18 @@ namespace OZHI_AWDS.Pages
             dt2.Columns.Add(new DataColumn("LabourEstimate", typeof(string)));
             dt2.Columns.Add(new DataColumn("GST", typeof(string)));
             dt2.Columns.Add(new DataColumn("PST", typeof(string)));
-            dt2.Columns.Add(new DataColumn("Total", typeof(double)));
+            dt2.Columns.Add(new DataColumn("Total", typeof(string)));
 
             dt3 = new DataTable();
+            dt3.Columns.Add(new DataColumn("SubTotal", typeof(string)));
             dt3.Columns.Add(new DataColumn("TotalMaterial", typeof(string)));
             dt3.Columns.Add(new DataColumn("TotalLabour", typeof(string)));
             dt3.Columns.Add(new DataColumn("TotalGST", typeof(string)));
             dt3.Columns.Add(new DataColumn("TotalPST", typeof(string)));
             dt3.Columns.Add(new DataColumn("GrandTotal", typeof(string)));
+            dt3.Columns.Add(new DataColumn("ContractorName", typeof(string)));
+            dt3.Columns.Add(new DataColumn("Date", typeof(string)));
+            dt3.Columns.Add(new DataColumn("GSTRegistrationNumber", typeof(string)));
         }
 
         private string ConvertToCurrency(double v)
