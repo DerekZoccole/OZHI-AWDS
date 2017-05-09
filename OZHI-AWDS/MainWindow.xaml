@@ -84,7 +84,9 @@
                 <!--<TextBlock Grid.Column="0" Grid.Row="9" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Style="{StaticResource TextBlockMouseOverStyle}" FontFamily="/OZHI-AWDS;component/#Open Sans" FontSize="14" Height="{Binding ActualHeight}" Padding="35,20">Tools</TextBlock>-->
             </Grid>
             <Grid Name="MainPageHolder" Grid.Column="1">
-                <Frame Name="FrameHolder" ContentRendered="FrameHolder_ContentRendered" />
+                <ScrollViewer>
+                    <Frame Name="FrameHolder" ContentRendered="FrameHolder_ContentRendered" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                </ScrollViewer>
             </Grid>
         </Grid>
     </Grid>

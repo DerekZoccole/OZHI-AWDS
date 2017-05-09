@@ -23,6 +23,59 @@ namespace OZHI_AWDS
         public Client()
         {
             InitializeComponent();
+
+            InitializeTextBlocks();
+        }
+
+        private void InitializeTextBlocks()
+        {
+            FirstNationTextBlock.FontSize = 13.3333;
+            FirstNationTextBlock.Padding = new Thickness(10);
+            FirstNationTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            FirstNationContactNameTextBlock.FontSize = 13.3333;
+            FirstNationContactNameTextBlock.Padding = new Thickness(10);
+            FirstNationContactNameTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            FirstNationContactPhoneTextBlock.FontSize = 13.3333;
+            FirstNationContactPhoneTextBlock.Padding = new Thickness(10);
+            FirstNationContactPhoneTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            FirstNationContactEmailTextBlock.FontSize = 13.3333;
+            FirstNationContactEmailTextBlock.Padding = new Thickness(10);
+            FirstNationContactEmailTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            ApplicantNameTextBlock.FontSize = 13.3333;
+            ApplicantNameTextBlock.Padding = new Thickness(10);
+            ApplicantNameTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            AlternateNameTextBlock.FontSize = 13.3333;
+            AlternateNameTextBlock.Padding = new Thickness(10);
+            AlternateNameTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            ApplicantTelephoneTextBlock.FontSize = 13.3333;
+            ApplicantTelephoneTextBlock.Padding = new Thickness(10);
+            ApplicantTelephoneTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            AddressTextBlock.FontSize = 13.3333;
+            AddressTextBlock.Padding = new Thickness(10);
+            AddressTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            CityTextBlock.FontSize = 13.3333;
+            CityTextBlock.Padding = new Thickness(10);
+            CityTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            ProvinceComboBox.FontSize = 13.3333;
+            ProvinceComboBox.Padding = new Thickness(10);
+            ProvinceComboBox.Margin = new Thickness(0, 0, 15, 0);
+
+            PostalCodeTextBlock.FontSize = 13.3333;
+            PostalCodeTextBlock.Padding = new Thickness(10);
+            PostalCodeTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            ServiceTextBlock.FontSize = 13.3333;
+            ServiceTextBlock.Padding = new Thickness(10);
+            ServiceTextBlock.Margin = new Thickness(0, 0, 15, 0);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -59,6 +112,11 @@ namespace OZHI_AWDS
         private void NewClientCancelButton_MouseLeave(object sender, MouseEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void ProvinceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ProvinceComboBox.Foreground = Brushes.Black;
         }
     }
 }
