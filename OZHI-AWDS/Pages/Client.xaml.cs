@@ -30,7 +30,7 @@ namespace OZHI_AWDS
         private void InitializeTextBlocks()
         {
             FirstNationTextBlock.FontSize = 13.3333;
-            FirstNationTextBlock.Padding = new Thickness(10);
+            FirstNationTextBlock.Padding = new Thickness(0, 10, 10, 10);
             FirstNationTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             FirstNationContactNameTextBlock.FontSize = 13.3333;
@@ -73,9 +73,9 @@ namespace OZHI_AWDS
             PostalCodeTextBlock.Padding = new Thickness(10);
             PostalCodeTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
-            ServiceTextBlock.FontSize = 13.3333;
-            ServiceTextBlock.Padding = new Thickness(10);
-            ServiceTextBlock.Margin = new Thickness(0, 0, 15, 0);
+            ServiceComboBox.FontSize = 13.3333;
+            ServiceComboBox.Padding = new Thickness(10);
+            ServiceComboBox.Margin = new Thickness(0, 0, 15, 0);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -117,6 +117,11 @@ namespace OZHI_AWDS
         private void ProvinceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ProvinceComboBox.Foreground = Brushes.Black;
+        }
+
+        private void ServiceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

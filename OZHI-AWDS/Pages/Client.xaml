@@ -60,7 +60,7 @@
         <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION</Bold></TextBlock>
         <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="FirstNationTextBox">
+                <TextBox x:Name="FirstNationTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="FirstNationTextBlock">First Nation</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -70,7 +70,7 @@
         <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT NAME</Bold></TextBlock>
         <Grid Grid.Row="3" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="FirstNationContactNameTextBox">
+                <TextBox x:Name="FirstNationContactNameTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="FirstNationContactNameTextBlock">First Nation Contact Name</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -80,7 +80,7 @@
         <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT PHONE</Bold></TextBlock>
         <Grid Grid.Row="5" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="FirstNationContactPhoneTextBox">
+                <TextBox x:Name="FirstNationContactPhoneTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="FirstNationContactPhoneTextBlock">First Nation Contact Phone</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -90,7 +90,7 @@
         <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT EMAIL</Bold></TextBlock>
         <Grid Grid.Row="7" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="FirstNationContactEmailTextBox">
+                <TextBox x:Name="FirstNationContactEmailTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="FirstNationContactEmailTextBlock">First Nation Contact Email</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -100,7 +100,7 @@
         <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>APPLICANT NAME</Bold></TextBlock>
         <Grid Grid.Row="9" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="ApplicantNameTextBox">
+                <TextBox x:Name="ApplicantNameTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="ApplicantNameTextBlock">Applicant Name</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -110,7 +110,7 @@
         <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>ALTERNATE NAME</Bold></TextBlock>
         <Grid Grid.Row="11" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="AlternateNameTextBox">
+                <TextBox x:Name="AlternateNameTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="AlternateNameTextBlock">Alternate Name</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -120,7 +120,7 @@
         <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>APPLICANT TELEPHONE NAME</Bold></TextBlock>
         <Grid Grid.Row="13" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="ApplicantTelephoneTextBox">
+                <TextBox x:Name="ApplicantTelephoneTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="ApplicantTelephoneTextBlock">Applicant Telephone Name</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -130,7 +130,7 @@
         <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>ADDRESS</Bold></TextBlock>
         <Grid Grid.Row="15" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="AddressTextBox">
+                <TextBox x:Name="AddressTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="AddressTextBlock">Address</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -140,7 +140,7 @@
         <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>CITY</Bold></TextBlock>
         <Grid Grid.Row="17" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="CityTextBox">
+                <TextBox x:Name="CityTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="CityTextBlock">City</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -166,7 +166,7 @@
         <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>POSTAL CODE</Bold></TextBlock>
         <Grid Grid.Row="21" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="PostalCodeTextBox">
+                <TextBox x:Name="PostalCodeTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="PostalCodeTextBlock">Postal Code</TextBlock>
                     </Controls:WatermarkService.Watermark>
@@ -175,13 +175,16 @@
         </Grid>
         <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>SERVICE</Bold></TextBlock>
         <Grid Grid.Row="23" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">
-            <AdornerDecorator>
-                <TextBox x:Name="ServiceTextBox">
-                    <Controls:WatermarkService.Watermark>
-                        <TextBlock Name="ServiceTextBlock">Service Name</TextBlock>
-                    </Controls:WatermarkService.Watermark>
-                </TextBox>
-            </AdornerDecorator>
+            <ComboBox Name="ServiceComboBox" Text="Service" IsEditable="True" HorizontalContentAlignment="Stretch" Foreground="Gray" SelectionChanged="ServiceComboBox_SelectionChanged">
+                <ComboBoxItem Foreground="Black">PAV</ComboBoxItem>
+                <ComboBoxItem Foreground="Black">PCR</ComboBoxItem>
+                <ComboBoxItem Foreground="Black">RRAP Initial</ComboBoxItem>
+                <ComboBoxItem Foreground="Black">RRAP Final</ComboBoxItem>
+                <ComboBoxItem Foreground="Black">ERP Initial</ComboBoxItem>
+                <ComboBoxItem Foreground="Black">ERP Final</ComboBoxItem>
+                <ComboBoxItem Foreground="Black">Retrofit Final</ComboBoxItem>
+                <ComboBoxItem Foreground="Black">HASI</ComboBoxItem>
+            </ComboBox>
         </Grid>
         <TextBlock Grid.Row="0" Grid.Column="6" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC ACCOUNT NUMBER</Bold></TextBlock>
         <Grid Grid.Row="1" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
