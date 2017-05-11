@@ -186,58 +186,58 @@
                 <ComboBoxItem Foreground="Black">HASI</ComboBoxItem>
             </ComboBox>
         </Grid>
-        <TextBlock Grid.Row="0" Grid.Column="6" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC ACCOUNT NUMBER</Bold></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="6" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>CMHC ACCOUNT NUMBER</Bold></TextBlock>
         <Grid Grid.Row="1" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="CMHCAccountNumberTextBox" Padding="10,5,0,0">
+                <TextBox x:Name="CMHCAccountNumberTextBox" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="CMHCAccountNumberTextBlock">CMHC Account Number</TextBlock>
                     </Controls:WatermarkService.Watermark>
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="3" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC CONTACT NAME</Bold></TextBlock>
-        <Grid Grid.Row="4" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+        <TextBlock Grid.Row="2" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>CMHC CONTACT NAME</Bold></TextBlock>
+        <Grid Grid.Row="3" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="CMHCContactNameTextBox" Padding="10,5,0,0">
+                <TextBox x:Name="CMHCContactNameTextBox" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="CMHCContactNameTextBlock">CMHC Contact Name</TextBlock>
                     </Controls:WatermarkService.Watermark>
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="5" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC CONTACT PHONE</Bold></TextBlock>
-        <Grid Grid.Row="6" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+        <TextBlock Grid.Row="4" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>CMHC CONTACT PHONE</Bold></TextBlock>
+        <Grid Grid.Row="5" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="CMHCContactPhoneTextBox" Padding="10,5,0,0">
+                <TextBox x:Name="CMHCContactPhoneTextBox" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="CMHCContactPhoneTextBlock">CMHC Contact Phonee</TextBlock>
                     </Controls:WatermarkService.Watermark>
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="7" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC CONTACT EMAIL</Bold></TextBlock>
-        <Grid Grid.Row="8" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+        <TextBlock Grid.Row="6" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>CMHC CONTACT EMAIL</Bold></TextBlock>
+        <Grid Grid.Row="7" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="CMHCContactEmailTextBox" Padding="10,5,0,0">
+                <TextBox x:Name="CMHCContactEmailTextBox" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="CMHCContactEmailTextBlock">CMHC Contact Email</TextBlock>
                     </Controls:WatermarkService.Watermark>
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="9" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC REQUEST DATE</Bold></TextBlock>
-        <Grid Grid.Row="10" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+        <TextBlock Grid.Row="8" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>CMHC REQUEST DATE</Bold></TextBlock>
+        <Grid Grid.Row="9" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="CMHCRequestDateTextBox" Padding="10,5,0,0">
+                <TextBox x:Name="CMHCRequestDateTextBox" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="CMHCRequestDateTextBlock">CMHC Request Date</TextBlock>
                     </Controls:WatermarkService.Watermark>
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="11" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC DATE REQUIRED</Bold></TextBlock>
-        <Grid Grid.Row="12" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+        <TextBlock Grid.Row="10" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC DATE REQUIRED</Bold></TextBlock>
+        <Grid Grid.Row="11" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
                 <TextBox x:Name="CMHCDateRequiredTextBox" Padding="10,5,0,0">
                     <Controls:WatermarkService.Watermark>

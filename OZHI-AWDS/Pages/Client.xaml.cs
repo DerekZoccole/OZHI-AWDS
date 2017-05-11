@@ -34,48 +34,64 @@ namespace OZHI_AWDS
             FirstNationTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             FirstNationContactNameTextBlock.FontSize = 13.3333;
-            FirstNationContactNameTextBlock.Padding = new Thickness(10);
+            FirstNationContactNameTextBlock.Padding = new Thickness(0, 10, 10, 10);
             FirstNationContactNameTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             FirstNationContactPhoneTextBlock.FontSize = 13.3333;
-            FirstNationContactPhoneTextBlock.Padding = new Thickness(10);
+            FirstNationContactPhoneTextBlock.Padding = new Thickness(0, 10, 10, 10);
             FirstNationContactPhoneTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             FirstNationContactEmailTextBlock.FontSize = 13.3333;
-            FirstNationContactEmailTextBlock.Padding = new Thickness(10);
+            FirstNationContactEmailTextBlock.Padding = new Thickness(0, 10, 10, 10);
             FirstNationContactEmailTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             ApplicantNameTextBlock.FontSize = 13.3333;
-            ApplicantNameTextBlock.Padding = new Thickness(10);
+            ApplicantNameTextBlock.Padding = new Thickness(0, 10, 10, 10);
             ApplicantNameTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             AlternateNameTextBlock.FontSize = 13.3333;
-            AlternateNameTextBlock.Padding = new Thickness(10);
+            AlternateNameTextBlock.Padding = new Thickness(0, 10, 10, 10);
             AlternateNameTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             ApplicantTelephoneTextBlock.FontSize = 13.3333;
-            ApplicantTelephoneTextBlock.Padding = new Thickness(10);
+            ApplicantTelephoneTextBlock.Padding = new Thickness(0, 10, 10, 10);
             ApplicantTelephoneTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             AddressTextBlock.FontSize = 13.3333;
-            AddressTextBlock.Padding = new Thickness(10);
+            AddressTextBlock.Padding = new Thickness(0, 10, 10, 10);
             AddressTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             CityTextBlock.FontSize = 13.3333;
-            CityTextBlock.Padding = new Thickness(10);
+            CityTextBlock.Padding = new Thickness(0, 10, 10, 10);
             CityTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             ProvinceComboBox.FontSize = 13.3333;
-            ProvinceComboBox.Padding = new Thickness(10);
+            ProvinceComboBox.Padding = new Thickness(0, 10, 10, 10);
             ProvinceComboBox.Margin = new Thickness(0, 0, 15, 0);
 
             PostalCodeTextBlock.FontSize = 13.3333;
-            PostalCodeTextBlock.Padding = new Thickness(10);
+            PostalCodeTextBlock.Padding = new Thickness(0, 10, 10, 10);
             PostalCodeTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             ServiceComboBox.FontSize = 13.3333;
-            ServiceComboBox.Padding = new Thickness(10);
+            ServiceComboBox.Padding = new Thickness(0, 10, 10, 10);
             ServiceComboBox.Margin = new Thickness(0, 0, 15, 0);
+
+            CMHCAccountNumberTextBlock.FontSize = 13.3333;
+            CMHCAccountNumberTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            CMHCAccountNumberTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            CMHCContactNameTextBlock.FontSize = 13.3333;
+            CMHCContactNameTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            CMHCContactNameTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            CMHCContactPhoneTextBlock.FontSize = 13.3333;
+            CMHCContactPhoneTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            CMHCContactPhoneTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            CMHCContactEmailTextBlock.FontSize = 13.3333;
+            CMHCContactEmailTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            CMHCContactEmailTextBlock.Margin = new Thickness(0, 0, 15, 0);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
