@@ -92,6 +92,34 @@ namespace OZHI_AWDS
             CMHCContactEmailTextBlock.FontSize = 13.3333;
             CMHCContactEmailTextBlock.Padding = new Thickness(0, 10, 10, 10);
             CMHCContactEmailTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            CMHCDateRequiredTextBlock.FontSize = 13.3333;
+            CMHCDateRequiredTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            CMHCDateRequiredTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            ClientIDTextBlock.FontSize = 13.3333;
+            ClientIDTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            ClientIDTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            InspectionDateTextBlock.FontSize = 13.3333;
+            InspectionDateTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            InspectionDateTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            InspectorTextBlock.FontSize = 13.3333;
+            InspectorTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            InspectorTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            AgentReferenceNumberTextBlock.FontSize = 13.3333;
+            AgentReferenceNumberTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            AgentReferenceNumberTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            LegalDescriptionTextBlock.FontSize = 13.3333;
+            LegalDescriptionTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            LegalDescriptionTextBlock.Margin = new Thickness(0, 0, 15, 0);
+
+            LoanTypeTextBlock.FontSize = 13.3333;
+            LoanTypeTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            LoanTypeTextBlock.Margin = new Thickness(0, 0, 15, 0);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

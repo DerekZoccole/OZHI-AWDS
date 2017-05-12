@@ -236,12 +236,72 @@
                 </TextBox>
             </AdornerDecorator>
         </Grid>
-        <TextBlock Grid.Row="10" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom" Margin="0,0,5,2"><Bold>CMHC DATE REQUIRED</Bold></TextBlock>
+        <TextBlock Grid.Row="10" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>CMHC DATE REQUIRED</Bold></TextBlock>
         <Grid Grid.Row="11" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
             <AdornerDecorator>
-                <TextBox x:Name="CMHCDateRequiredTextBox" Padding="10,5,0,0">
+                <TextBox x:Name="CMHCDateRequiredTextBox" Padding="10,0,0,0">
                     <Controls:WatermarkService.Watermark>
                         <TextBlock Name="CMHCDateRequiredTextBlock">CMHC Date Required</TextBlock>
+                    </Controls:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+        </Grid>
+        <TextBlock Grid.Row="12" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>CLIENT ID</Bold></TextBlock>
+        <Grid Grid.Row="13" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+            <AdornerDecorator>
+                <TextBox x:Name="ClientIDTextBox" Padding="10,0,0,0">
+                    <Controls:WatermarkService.Watermark>
+                        <TextBlock Name="ClientIDTextBlock">Client ID</TextBlock>
+                    </Controls:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+        </Grid>
+        <TextBlock Grid.Row="14" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>INSPECTION DATE</Bold></TextBlock>
+        <Grid Grid.Row="15" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+            <AdornerDecorator>
+                <TextBox x:Name="InspectionDateTextBox" Padding="10,0,0,0">
+                    <Controls:WatermarkService.Watermark>
+                        <TextBlock Name="InspectionDateTextBlock">Inspection Date</TextBlock>
+                    </Controls:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+        </Grid>
+        <TextBlock Grid.Row="16" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>INSPECTOR</Bold></TextBlock>
+        <Grid Grid.Row="17" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+            <AdornerDecorator>
+                <TextBox x:Name="InspectorTextBox" Padding="10,0,0,0">
+                    <Controls:WatermarkService.Watermark>
+                        <TextBlock Name="InspectorTextBlock">Inspector</TextBlock>
+                    </Controls:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+        </Grid>
+        <TextBlock Grid.Row="18" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>AGENT REFERENCE NUMBER</Bold></TextBlock>
+        <Grid Grid.Row="19" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+            <AdornerDecorator>
+                <TextBox x:Name="AgentReferenceNumberTextBox" Padding="10,0,0,0">
+                    <Controls:WatermarkService.Watermark>
+                        <TextBlock Name="AgentReferenceNumberTextBlock">Agent Reference Number</TextBlock>
+                    </Controls:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+        </Grid>
+        <TextBlock Grid.Row="20" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>LEGAL DESCRIPTION</Bold></TextBlock>
+        <Grid Grid.Row="21" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+            <AdornerDecorator>
+                <TextBox x:Name="LegalDescriptionTextBox" Padding="10,0,0,0">
+                    <Controls:WatermarkService.Watermark>
+                        <TextBlock Name="LegalDescriptionTextBlock">Legal Description</TextBlock>
+                    </Controls:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+        </Grid>
+        <TextBlock Grid.Row="22" Grid.Column="6" Style="{StaticResource OpenSans}" VerticalAlignment="Bottom"><Bold>LOAN TYPE</Bold></TextBlock>
+        <Grid Grid.Row="23" Grid.Column="6" Style="{StaticResource EntryFieldStyle}" Height="41">
+            <AdornerDecorator>
+                <TextBox x:Name="LoanTypeTextBox" Padding="10,0,0,0">
+                    <Controls:WatermarkService.Watermark>
+                        <TextBlock Name="LoanTypeTextBlock">LoanType</TextBlock>
                     </Controls:WatermarkService.Watermark>
                 </TextBox>
             </AdornerDecorator>
