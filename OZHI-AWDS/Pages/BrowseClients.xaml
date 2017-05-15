@@ -20,7 +20,15 @@
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Stretch" />
         </Style>
-
+        <Style x:Key="TextBlockMouseOverStyle" TargetType="{x:Type TextBlock}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#8BC63E" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="TextElement.FontFamily" Value="OpenSans-Regular" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <Style x:Key="OpenSans">
             <Setter Property="TextElement.FontFamily" Value="OpenSans-Italic" />
         </Style>
@@ -160,7 +168,47 @@
         </Grid>
         <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>PROVINCE</Bold></TextBlock>
         <Grid Grid.Row="20" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41" HorizontalAlignment="Stretch">
-            <ComboBox Name="ProvinceComboBox" Text="Province" IsEditable="True" HorizontalContentAlignment="Stretch" Foreground="Gray" SelectionChanged="ProvinceComboBox_SelectionChanged">
+            <AdornerDecorator>
+                <TextBox x:Name="ProvinceTextBox" VerticalContentAlignment="Center" Padding="10,0,0,0" GotKeyboardFocus="ProvinceTextBox_GotKeyboardFocus">
+                    <Controls:WatermarkService.Watermark>
+                        <TextBlock Name="ProvinceTextBlock">Select an Option</TextBlock>
+                    </Controls:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Popup x:Name="ProvincePopup" Width="150" Height="220" PlacementTarget="{Binding ElementName=ProvinceTextBox}" StaysOpen="{Binding ElementName=ProvinceTextBox,Path=IsKeyboardFocused}" >
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="SelectTextBlock1" Grid.Column="0" Grid.Row="0" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Select an Option</TextBlock>
+                    <TextBlock Name="AlbertaTextBlock" Grid.Column="0" Grid.Row="1" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Alberta</TextBlock>
+                    <TextBlock Name="BritishColumbiaTextBlock" Grid.Column="0" Grid.Row="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">British Columbia</TextBlock>
+                    <TextBlock Name="ManitobaTextBlock" Grid.Column="0" Grid.Row="3" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Manitoba</TextBlock>
+                    <TextBlock Name="NewBrunswickTextBlock" Grid.Column="0" Grid.Row="4" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">New Brunswick</TextBlock>
+                    <TextBlock Name="NewfoundlandTextBlock" Grid.Column="0" Grid.Row="5" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Newfoundland</TextBlock>
+                    <TextBlock Name="NovaScotiaTextBlock" Grid.Column="0" Grid.Row="6" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Nova Scotia</TextBlock>
+                    <TextBlock Name="OntarioTextBlock" Grid.Column="0" Grid.Row="7" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Ontario</TextBlock>
+                    <TextBlock Name="PrinceEdwardIslandTextBlock" Grid.Column="0" Grid.Row="8" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Prince Edward Island</TextBlock>
+                    <TextBlock Name="QuebecTextBlock" Grid.Column="0" Grid.Row="9" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Quebec</TextBlock>
+                    <TextBlock Name="SaskatchewanTextBlock" Grid.Column="0" Grid.Row="10" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Saskatchewan</TextBlock>
+                    <TextBlock Name="YukonTextBlock" Grid.Column="0" Grid.Row="12" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Yukon</TextBlock>
+                </Grid>
+            </Popup>
+            <!--<ComboBox Name="ProvinceComboBox" Text="Province" IsEditable="True" HorizontalContentAlignment="Stretch" Foreground="Gray" SelectionChanged="ProvinceComboBox_SelectionChanged">
                 <ComboBoxItem Foreground="Black">Alberta</ComboBoxItem>
                 <ComboBoxItem Foreground="Black">British Columbia</ComboBoxItem>
                 <ComboBoxItem Foreground="Black">Manitoba</ComboBoxItem>
@@ -172,7 +220,7 @@
                 <ComboBoxItem Foreground="Black">Quebec</ComboBoxItem>
                 <ComboBoxItem Foreground="Black">Saskatchewan</ComboBoxItem>
                 <ComboBoxItem Foreground="Black">Yukon</ComboBoxItem>
-            </ComboBox>
+            </ComboBox>-->
         </Grid>
         <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Bottom"><Bold>POSTAL CODE</Bold></TextBlock>
         <Grid Grid.Row="22" Grid.Column="2" Style="{StaticResource EntryFieldStyle}" Height="41">

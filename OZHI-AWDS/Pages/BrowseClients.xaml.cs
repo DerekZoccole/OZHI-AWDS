@@ -65,9 +65,9 @@ namespace OZHI_AWDS
             CityTextBlock.Padding = new Thickness(0, 10, 10, 10);
             CityTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
-            ProvinceComboBox.FontSize = 13.3333;
-            ProvinceComboBox.Padding = new Thickness(0, 10, 10, 10);
-            ProvinceComboBox.Margin = new Thickness(0, 0, 15, 0);
+            ProvinceTextBlock.FontSize = 13.3333;
+            ProvinceTextBlock.Padding = new Thickness(0, 10, 10, 10);
+            ProvinceTextBlock.Margin = new Thickness(0, 0, 15, 0);
 
             PostalCodeTextBlock.FontSize = 13.3333;
             PostalCodeTextBlock.Padding = new Thickness(0, 10, 10, 10);
@@ -160,7 +160,7 @@ namespace OZHI_AWDS
 
         private void ProvinceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ProvinceComboBox.Foreground = Brushes.Black;
+            ProvinceTextBlock.Foreground = Brushes.Black;
         }
 
         private void ServiceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -171,6 +171,11 @@ namespace OZHI_AWDS
         private void PostalCodeTextBox_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             Console.WriteLine("Works");
+        }
+
+        private void ProvinceTextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            ProvincePopup.IsOpen = true;
         }
     }
 }
