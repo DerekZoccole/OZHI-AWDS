@@ -7,7 +7,7 @@
       xmlns:Controls="clr-namespace:Watermark"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="BrowseClients" Background="White">
+      Title="BrowseClients" Background="White" Loaded="Page_Loaded">
     <Page.Resources>
         <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
         <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
@@ -175,7 +175,7 @@
                     </Controls:WatermarkService.Watermark>
                 </TextBox>
             </AdornerDecorator>
-            <Popup x:Name="ProvincePopup" Width="150" Height="220" PlacementTarget="{Binding ElementName=ProvinceTextBox}" StaysOpen="{Binding ElementName=ProvinceTextBox,Path=IsKeyboardFocused}" >
+            <Popup x:Name="ProvincePopup" Width="150" Height="240" PlacementTarget="{Binding ElementName=ProvinceTextBox}" StaysOpen="{Binding ElementName=ProvinceTextBox,Path=IsKeyboardFocused}" >
                 <Grid Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
@@ -193,8 +193,9 @@
                         <RowDefinition Height="20" />
                         <RowDefinition Height="20" />
                         <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
                     </Grid.RowDefinitions>
-                    <TextBlock Name="SelectTextBlock1" Grid.Column="0" Grid.Row="0" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Select an Option</TextBlock>
+                    <TextBlock Name="SelectTextBlock1" Grid.Column="0" Grid.Row="0" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Select a Province</TextBlock>
                     <TextBlock Name="AlbertaTextBlock" Grid.Column="0" Grid.Row="1" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Alberta</TextBlock>
                     <TextBlock Name="BritishColumbiaTextBlock" Grid.Column="0" Grid.Row="2" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">British Columbia</TextBlock>
                     <TextBlock Name="ManitobaTextBlock" Grid.Column="0" Grid.Row="3" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Manitoba</TextBlock>
@@ -205,7 +206,7 @@
                     <TextBlock Name="PrinceEdwardIslandTextBlock" Grid.Column="0" Grid.Row="8" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Prince Edward Island</TextBlock>
                     <TextBlock Name="QuebecTextBlock" Grid.Column="0" Grid.Row="9" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Quebec</TextBlock>
                     <TextBlock Name="SaskatchewanTextBlock" Grid.Column="0" Grid.Row="10" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Saskatchewan</TextBlock>
-                    <TextBlock Name="YukonTextBlock" Grid.Column="0" Grid.Row="12" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Yukon</TextBlock>
+                    <TextBlock Name="YukonTextBlock" Grid.Column="0" Grid.Row="11" Style="{StaticResource OpenSans}" FontSize="14" VerticalAlignment="Center">Yukon</TextBlock>
                 </Grid>
             </Popup>
             <!--<ComboBox Name="ProvinceComboBox" Text="Province" IsEditable="True" HorizontalContentAlignment="Stretch" Foreground="Gray" SelectionChanged="ProvinceComboBox_SelectionChanged">

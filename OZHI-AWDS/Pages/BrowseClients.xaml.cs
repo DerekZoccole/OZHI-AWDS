@@ -23,8 +23,278 @@ namespace OZHI_AWDS
         public BrowseClients()
         {
             InitializeComponent();
+        }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
             InitializeTextBlocks();
+
+            SelectTextBlock1.MouseEnter += SelectTextBlock1_MouseEnter;
+            SelectTextBlock1.MouseLeave += SelectTextBlock1_MouseLeave;
+            SelectTextBlock1.MouseUp += SelectTextBlock1_MouseUp;
+
+            AlbertaTextBlock.MouseEnter += AlbertaTextBlock_MouseEnter;
+            AlbertaTextBlock.MouseLeave += AlbertaTextBlock_MouseLeave;
+            AlbertaTextBlock.MouseUp += AlbertaTextBlock_MouseUp;
+
+            BritishColumbiaTextBlock.MouseEnter += BritishColumbiaTextBlock_MouseEnter;
+            BritishColumbiaTextBlock.MouseLeave += BritishColumbiaTextBlock_MouseLeave;
+
+            ManitobaTextBlock.MouseEnter += ManitobaTextBlock_MouseEnter;
+            ManitobaTextBlock.MouseLeave += ManitobaTextBlock_MouseLeave;
+
+            NewBrunswickTextBlock.MouseEnter += NewBrunswickTextBlock_MouseEnter;
+            NewBrunswickTextBlock.MouseLeave += NewBrunswickTextBlock_MouseLeave;
+
+            NewfoundlandTextBlock.MouseEnter += NewfoundlandTextBlock_MouseEnter;
+            NewfoundlandTextBlock.MouseLeave += NewfoundlandTextBlock_MouseLeave;
+
+            NovaScotiaTextBlock.MouseEnter += NovaScotiaTextBlock_MouseEnter;
+            NovaScotiaTextBlock.MouseLeave += NovaScotiaTextBlock_MouseLeave;
+
+            OntarioTextBlock.MouseEnter += OntarioTextBlock_MouseEnter;
+            OntarioTextBlock.MouseLeave += OntarioTextBlock_MouseLeave;
+
+            PrinceEdwardIslandTextBlock.MouseEnter += PrinceEdwardIslandTextBlock_MouseEnter;
+            PrinceEdwardIslandTextBlock.MouseLeave += PrinceEdwardIslandTextBlock_MouseLeave;
+
+            QuebecTextBlock.MouseEnter += QuebecTextBlock_MouseEnter;
+            QuebecTextBlock.MouseLeave += QuebecTextBlock_MouseLeave;
+
+            SaskatchewanTextBlock.MouseEnter += SaskatchewanTextBlock_MouseEnter;
+            SaskatchewanTextBlock.MouseLeave += SaskatchewanTextBlock_MouseLeave;
+
+            YukonTextBlock.MouseEnter += YukonTextBlock_MouseEnter;
+            YukonTextBlock.MouseLeave += YukonTextBlock_MouseLeave;
+        }
+
+        private void AlbertaTextBlock_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            ProvinceTextBlock.Text = "Alberta";
+            ProvinceTextBlock.Foreground = Brushes.Black;
+            ProvincePopup.IsOpen = false;
+        }
+
+        private void SelectTextBlock1_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            ProvinceTextBlock.Text = "Select a Province";
+            ProvincePopup.IsOpen = false;
+        }
+
+        private void QuebecTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void QuebecTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void YukonTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void YukonTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void SaskatchewanTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void SaskatchewanTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void PrinceEdwardIslandTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void PrinceEdwardIslandTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void OntarioTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void OntarioTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void NovaScotiaTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void NovaScotiaTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void NewfoundlandTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void NewfoundlandTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void NewBrunswickTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void NewBrunswickTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void ManitobaTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void ManitobaTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void BritishColumbiaTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void BritishColumbiaTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void AlbertaTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void AlbertaTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
+        }
+
+        private void SelectTextBlock1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = null;
+            tBlock.Foreground = Brushes.Black;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+
+        private void SelectTextBlock1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlock tBlock = (TextBlock)sender;
+            BrushConverter bc = new BrushConverter();
+            tBlock.Background = (Brush)bc.ConvertFrom("#8BC63E");
+            tBlock.Foreground = Brushes.White;
+            Mouse.OverrideCursor = Cursors.Hand;
         }
 
         private void InitializeTextBlocks()
@@ -160,7 +430,7 @@ namespace OZHI_AWDS
 
         private void ProvinceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ProvinceTextBlock.Foreground = Brushes.Black;
+            //ProvinceTextBlock.Foreground = Brushes.Black;
         }
 
         private void ServiceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
